@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+div {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  flex-direction: column;
+  align-items: center;
+  min-height: 10em;
+  padding: 1em 20vw;
+}

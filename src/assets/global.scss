@@ -1,0 +1,45 @@
+$container-width: 26.33em;
+$container-height: 16.66em;
+
+$circle-background-width: 10em;
+$circle-background-top: 1.33em;
+
+$desktop-width: 16.66em;
+$desktop-height: 0.66em;
+
+//laptop
+//top-edge
+$laptop-top-edge-height: 0.33em;
+
+//kb
+$laptop-kb-height: 0.33em;
+$laptop-kb-background: rgb(133, 133, 133);
+
+//screen
+$logo-width: 0.73em;
+$slash-height: 0.06em;
+$slash-width: 0.46em;
+
+$sticker-width: 0.66em;
+
+$laptop-width: 6.66em;
+$laptop-height: 5em;
+$laptop-border-radius: 0.33em;
+
+//mug
+$mug-width: 1.16em;
+$mug-height: 1.66em;
+$mug-background: #f65c22;
+//mug-shadow
+$mug-shadow: #bc3300;
+$desktop-top: $circle-background-top + $circle-background-width;
+
+$jar-width: $laptop-width/5;
+$jar-height: $jar-width * 2;
+
+$me-width: $container-width/3;
+$me-height: $container-height*0.8;
+
+@function horizontalCenter($parentWidth, $element-width) {
+  @return ($parentWidth - $element-width) /2;
+}

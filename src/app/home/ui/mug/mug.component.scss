@@ -1,0 +1,120 @@
+@use './src/assets/global';
+
+#mug {
+  width: global.$mug-width;
+  height: global.$mug-height;
+  background: global.$mug-background;
+  background: -webkit-linear-gradient(left, global.$mug-background 75%, global.$mug-shadow 50%);
+  border-radius: 0 0 0.33em 0.33em;
+  overflow: hidden;
+
+  #mug-shadow {
+    width: global.$mug-width/4;
+    height: global.$mug-height;
+    background: global.$mug-shadow;
+    border-radius: 0 0 0.33em 0;
+    right: 0;
+  }
+
+  #mug-shadow::before {
+    content: "";
+    position: absolute;
+    width: global.$mug-width;
+    height: global.$mug-width/2;
+    z-index: 999;
+    background: #0000ff00;
+    border-top-left-radius: 28%;
+    border-top-right-radius: 100%;
+    transform: translate(-54%, 109%) rotate(119deg);
+    border-top: 10px solid #bc3300;
+  }
+}
+
+#mug-handle {
+  width: global.$mug-width/2;
+  height: global.$mug-width/2;
+  background-color: transparent;
+  border-radius: 50%;
+  left: -(global.$mug-width/1.8);
+  top: global.$mug-width/4;
+  border: global.$mug-width/6 solid global.$mug-background;
+}
+
+.steam {
+  width: global.$mug-width/1.25;
+  height: global.$mug-width/1.25;
+  z-index: 9;
+  background: #d5d5d5;
+  border-radius: 50%;
+  opacity: 0;
+  left: global.$mug-width/10;
+  top: -(global.$mug-height/3);
+}
+
+#steam-1 {
+  animation: steam-1 4s ease-out 0s infinite;
+}
+
+#steam-3 {
+  animation: steam-1 4s ease-out 1s infinite;
+}
+
+#steam-2 {
+  animation: steam-2 4s ease-out 0.5s infinite;
+}
+
+#steam-4 {
+  animation: steam-2 4s ease-out 1.5s infinite;
+}
+
+#steam-5 {
+  animation: steam-5 4s ease-out 2s infinite;
+}
+
+#steam-6 {
+  animation: steam-5 4s ease-out 2.5s infinite;
+}
+
+#steam-7 {
+  animation: steam-2 4s ease-out 3s infinite;
+}
+
+#steam-8 {
+  animation: steam-2 4s ease-out 3.5s infinite;
+}
+
+@keyframes steam-1 {
+
+  0% {
+    transform: translateY(0) translateX(0) scale(0.25);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-(global.$mug-width)) translateX(-0.66em) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes steam-2 {
+
+  0% {
+    transform: translateY(0) translateX(0) scale(0.25);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-(global.$mug-width)) translateX(-0.13em) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes steam-5 {
+
+  0% {
+    transform: translateY(0) translateX(0) scale(0.25);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-(global.$mug-width)) translateX(0.33em) scale(1);
+    opacity: 0;
+  }
+}

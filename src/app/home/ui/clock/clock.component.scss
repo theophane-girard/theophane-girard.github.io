@@ -1,0 +1,68 @@
+@use './src/assets/global';
+
+$hand-color: black;
+$clock-width: 2.66em;
+$notch-width: 0.06em;
+$notch-height: 0.66em;
+$minutes-width: $clock-width/25;
+$minutes-height: $clock-width/3;
+$seconds-height: $clock-width/3;
+$seconds-width: 0.06em;
+$hand-axis-width: $clock-width/13;
+$hours-height: $clock-width/4;
+
+#clock {
+  width: $clock-width;
+  height: $clock-width;
+  background: white;
+  border-radius: 50%;
+}
+
+#hand-axis {
+  width: $hand-axis-width;
+  height: $hand-axis-width;
+  background: black;
+  border-radius: 50%;
+  top: global.horizontalCenter($clock-width, $hand-axis-width);
+  left: global.horizontalCenter($clock-width, $hand-axis-width);
+}
+
+#hours {
+  width: $minutes-width;
+  height: $hours-height;
+  position: absolute;
+  top: $hours-height;
+  left: global.horizontalCenter($clock-width, $minutes-width);
+  background: $hand-color;
+  border-radius: 100% 100% 0 0;
+  transform-origin: bottom center;
+}
+
+#minutes {
+  width: $minutes-width;
+  height: $minutes-height;
+  position: absolute;
+  top: $minutes-height/2;
+  left: global.horizontalCenter($clock-width, $minutes-width);
+  background: $hand-color;
+  border-radius: 100% 100% 0 0;
+  transform-origin: bottom center;
+  transition: transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+
+#seconds {
+  width: $seconds-width;
+  height: $seconds-height;
+  position: absolute;
+  top: $seconds-height/2;
+  left: global.horizontalCenter($clock-width, $seconds-width);
+  background: $hand-color;
+  border-radius: 100% 100% 0 0;
+  transform-origin: bottom center;
+  transition: transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+
+#notches {
+  width: $clock-width;
+  height: $clock-width;
+}

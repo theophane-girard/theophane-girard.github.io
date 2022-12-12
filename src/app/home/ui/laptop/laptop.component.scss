@@ -1,0 +1,170 @@
+@use './src/assets/global';
+
+$html-logo-glow: white;
+$chevron-width: 0.33em;
+
+#laptop {
+  z-index: 9;
+  position: absolute;
+  width: global.$laptop-width;
+  height: global.$laptop-height;
+  top: global.$desktop-top - global.$laptop-height - global.$laptop-kb-height +
+    0.03em;
+  left: global.horizontalCenter(global.$container-width, global.$laptop-width);
+  transform: perspective(33.33em) rotateX(-30deg) rotateY(0) scale3d(1.1, 1.2, 1.1);
+
+  #laptop-screen {
+    width: global.$laptop-width;
+    height: global.$laptop-height;
+    background-color: rgb(212, 211, 211);
+    position: absolute;
+    border-radius: global.$laptop-border-radius;
+  }
+
+  #laptop-top-edge {
+    width: global.$laptop-width;
+    height: global.$laptop-top-edge-height;
+    background-color: global.$laptop-kb-background;
+    position: absolute;
+    top: -0.03em;
+    border-radius: global.$laptop-border-radius;
+    animation: top-edge-animation 4s ease 0s infinite alternate;
+  }
+
+  #laptop-kb {
+    width: global.$laptop-width;
+    height: global.$laptop-kb-height;
+    background-color: global.$laptop-kb-background;
+    position: absolute;
+    top: global.$laptop-height;
+    box-shadow: 0 -0.03em 0.03em 0 #303030;
+  }
+
+  #html-logo {
+    #chevron-right {
+      box-sizing: border-box;
+      position: absolute;
+      top: global.horizontalCenter(global.$laptop-height, global.$logo-width);
+      left: global.horizontalCenter(global.$laptop-width, global.$logo-width) +
+        (global.$slash-width/1.5);
+      width: global.$logo-width;
+      height: global.$logo-width;
+      border: 0.06em solid transparent;
+      border-radius: 3.33em;
+    }
+
+    #chevron-right::before {
+      content: "";
+      left: 0.33em;
+      top: 0.23em;
+      width: $chevron-width/8;
+      height: $chevron-width;
+      animation: half-yellow-shadow 3s ease infinite alternate;
+      transform: rotate(45deg);
+      position: absolute;
+    }
+
+    #chevron-right::after {
+      transition-timing-function: ease;
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      position: absolute;
+      width: $chevron-width;
+      height: $chevron-width;
+      border-bottom: 0.06em solid $html-logo-glow;
+      border-right: 0.06em solid $html-logo-glow;
+      transform: rotate(-45deg);
+      right: 0.2em;
+      top: 0.13em;
+    }
+
+    #chevron-left {
+      position: absolute;
+      display: block;
+      width: 0.73em;
+      height: 0.73em;
+      border: 0.06em solid transparent;
+      border-radius: 3.33em;
+      top: global.horizontalCenter(global.$laptop-height, global.$logo-width);
+      left: global.horizontalCenter(global.$laptop-width, global.$logo-width) -
+        (global.$slash-width/1.5);
+    }
+
+    #chevron-left::before {
+      content: "";
+      left: 0.25em;
+      top: 0.03em;
+      width: $chevron-width/8;
+      height: $chevron-width;
+      animation: half-yellow-shadow 3s ease infinite alternate;
+      transform: rotate(45deg);
+      position: absolute;
+    }
+
+    #chevron-left::after {
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      position: absolute;
+      width: $chevron-width;
+      height: $chevron-width;
+      border-bottom: 0.06em solid white;
+      border-left: 0.06em solid white;
+      transform: rotate(45deg);
+      left: 0.2em;
+      top: 0.13em;
+    }
+
+    #slash {
+      animation: slash-animation 2s ease-in-out infinite alternate;
+      transition-timing-function: ease;
+      width: global.$slash-width;
+      transform: rotate(-70deg);
+      height: global.$slash-height;
+      background: black;
+      position: absolute;
+      border-radius: 3.33em;
+      top: global.horizontalCenter(global.$laptop-height, global.$slash-height);
+      left: global.horizontalCenter(global.$laptop-width, global.$slash-width);
+    }
+
+    @keyframes half-yellow-shadow {
+      0% {
+        box-shadow: 0 0 20px 3px #000000, 0 0 4px 2px #000000;
+      }
+      100% {
+        box-shadow: 0 0 20px 3px #000000, 0 0 6px 1px white;
+      }
+    }
+    @function randomColor() {
+      @return rgb(random(255), random(255), random(255));
+    }
+
+    @keyframes top-edge-animation {
+      0% {
+        box-shadow: 0 0 17px 3px randomColor(), 0 0 4px 2px randomColor();
+      }
+      100% {
+        box-shadow: 0 0 17px 3px randomColor(), 0 0 4px 2px randomColor();
+      }
+    }
+  }
+
+  #angular-sticker {
+    img {
+      z-index: 9;
+      width: global.$sticker-width;
+    }
+  }
+
+  #js-sticker {
+    top: global.$laptop-height - global.$sticker-width - 0.03em;
+    left: global.$laptop-width - global.$sticker-width - 0.1em;
+
+    img {
+      z-index: 9;
+      width: global.$sticker-width;
+    }
+  }
+}

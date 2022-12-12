@@ -1,0 +1,34 @@
+@use './src/assets/global';
+
+#left-arm {
+  transform-origin: center;
+  animation: left-arm 1s linear infinite alternate;
+}
+
+svg {
+  width: global.$me-width;
+  height: global.$me-height;
+}
+
+@keyframes left-arm {
+  0% {
+    transform: rotate(359deg);
+  }
+  100% {
+    transform: rotate(361deg);
+  }
+}
+
+#right-arm {
+  transform-origin: center;
+  animation: left-arm 1s linear infinite alternate;
+}
+
+@keyframes right-arm {
+  0% {
+    transform: rotate(359deg);
+  }
+  100% {
+    transform: rotate(361deg);
+  }
+}
