@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
   imports: [HomeComponent],
   template: `
     <cv-home></cv-home>
+    <div id="layer1" class="spacer"></div>
     <section id="skills"></section>
   `,
   standalone: true,

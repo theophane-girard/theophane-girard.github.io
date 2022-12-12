@@ -2,7 +2,7 @@
 
 section {
   align-items: flex-start;
-  background: cornflowerblue;
+  background: #003c6a;
 }
 
 #container {
@@ -36,7 +36,7 @@ section {
 
 cv-clock {
   z-index: 6;
-  left: 20em;
+  left: global.$container-width * 0.7;
 }
 
 cv-laptop {
