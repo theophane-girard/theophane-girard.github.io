@@ -27,3 +27,11 @@ section {
   min-height: 10em;
   padding: 1em 20vw;
 }
+
+.animation-paused {
+  animation-play-state: paused !important;
+}
+
+.animation-running {
+  animation-play-state: running !important;
+}

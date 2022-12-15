@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
+import { WaveSeparatorComponent } from './wave-separator/wave-separator.component';
 
 @Component({
   selector: 'cv-root',
-  imports: [HomeComponent],
+  imports: [HomeComponent, WaveSeparatorComponent],
   template: `
     <cv-home></cv-home>
-    <div id="layer1" class="spacer"></div>
+    <cv-wave-separator></cv-wave-separator>
     <section id="skills"></section>
   `,
   standalone: true,
