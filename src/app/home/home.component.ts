@@ -5,6 +5,7 @@ import { PlantComponent } from './ui/plant/plant.component';
 import { ClockComponent } from './ui/clock/clock.component';
 import { LaptopComponent } from './ui/laptop/laptop.component';
 import { MugComponent } from './ui/mug/mug.component';
+import { SectionComponent } from '../shared/ui/section.component';
 
 @Component({
   selector: 'cv-home',
@@ -18,7 +19,7 @@ import { MugComponent } from './ui/mug/mug.component';
     MeComponent,
   ],
   template: `
-    <section style="display: flex">
+    <section style="display: flex" [style.background]="backgroundColor">
       <div>
         <h1>Théophane Girard</h1>
         <h3>Angular developer</h3>
@@ -40,4 +41,4 @@ import { MugComponent } from './ui/mug/mug.component';
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {}
+export class HomeComponent extends SectionComponent {}
