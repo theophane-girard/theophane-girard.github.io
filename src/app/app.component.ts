@@ -7,7 +7,7 @@ import {
   SECOND_WAVES,
   WaveBackgrounds,
 } from './wave-separator/data/waves.mock';
-import { HobbiesComponent } from './others/hobbies.component';
+import { HobbiesComponent } from './hobbies/hobbies.component';
 import {
   HOME_BACKGROUND_COLOR,
   SECOND_BACKGROUND_COLOR,

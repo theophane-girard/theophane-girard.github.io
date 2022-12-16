@@ -1,0 +1,128 @@
+@use './src/assets/global';
+
+$container-width: 15em;
+$big-fire-width: 4em;
+$animation-time: 1.5s;
+
+.wood {
+  position: absolute;
+  width: 1em;
+  height: 10em;
+  transform-origin: center;
+  top: $container-width * 0.5;
+  left: global.horizontalCenter($container-width, 1em);
+  border-radius: 1vw;
+}
+
+#wood1 {
+  background: rgb(87, 33, 33);
+  transform: rotate(70deg);
+}
+
+#wood2 {
+  background: brown;
+  transform: rotate(-70deg);
+}
+
+#fire-container {
+  width: $container-width;
+  height: $container-width;
+}
+
+.flames {
+  position: absolute;
+  transform: rotate(225deg);
+  width: $container-width / 2;
+  height: $container-width / 2;
+  left: global.horizontalCenter($container-width, $container-width / 2);
+  top: global.horizontalCenter($container-width, $container-width / 2);
+}
+
+.fire {
+  position: absolute;
+  border-radius: 1vw;
+
+  &:nth-child(2n + 1) {
+    animation: oddFlameAnimation $animation-time ease-in infinite;
+  }
+
+  &:nth-child(2n) {
+    animation: evenFlameAnimation $animation-time ease-in infinite;
+  }
+
+  &:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: $animation-time/4;
+  }
+
+  &:nth-child(3) {
+    animation-delay: $animation-time/4 * 2;
+  }
+
+  &:nth-child(4) {
+    animation-delay: $animation-time/4 * 3;
+  }
+}
+
+#big-fire {
+  // animation: flameAnimation 1.5s linear infinite;
+}
+
+@keyframes oddFlameAnimation {
+  0%,
+  100% {
+    width: 0;
+    height: 0;
+    background-color: yellow;
+    z-index: 9;
+  }
+  25% {
+    width: $big-fire-width;
+    height: $big-fire-width;
+    top: 0.1em;
+    left: 0.1em;
+  }
+  40% {
+    background: orange;
+    z-index: 9;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    background: rgb(248, 103, 6);
+    top: 10em;
+    left: 12em;
+    z-index: 1;
+  }
+}
+
+@keyframes evenFlameAnimation {
+  0%,
+  100% {
+    width: 0;
+    height: 0;
+    background-color: yellow;
+    z-index: 9;
+  }
+  25% {
+    width: $big-fire-width;
+    height: $big-fire-width;
+    top: 0.1em;
+    left: 0.1em;
+  }
+  40% {
+    background: orange;
+    z-index: 9;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    background: rgb(248, 103, 6);
+    top: 10em;
+    left: 9em;
+    z-index: 1;
+  }
+}
