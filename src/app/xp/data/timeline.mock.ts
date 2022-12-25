@@ -2,28 +2,56 @@ import { TimelineSection } from './timeline.model';
 
 export const TIMELINE: TimelineSection[] = [
   {
+    duration: '2022 - 2023',
+    pro: {
+      title: 'Fullstack developer',
+      description:
+        'Fullstack developer (Angular & NodeJs x TypeOrm) at Sogeti - part of Capgemini. I built apps which display, calculate and process complex data.',
+      organization: {
+        name: 'Sogeti - Capgemini',
+        logo: { url: 'sogeti.svg', isBackgroundColorWhite: true },
+        url: 'https://sogeti.com',
+      },
+      skills: [
+        {
+          name: 'Angular',
+          logo: { url: 'ng.svg' },
+        },
+        {
+          name: 'Node',
+          logo: { url: 'node.svg' },
+        },
+        {
+          name: 'Postgres',
+          logo: { url: 'pgsql.png' },
+        },
+      ],
+    },
+    education: undefined,
+  },
+  {
     duration: '2018 - 2022',
     pro: {
       title: 'Web developer',
       description:
-        "Développeur fullstack (Angular & Php) prestataire chez NSI, l'éditeur logiciel de l'ADMR",
+        'Fullstack developer (Angular & Php) at NSI - ADMR. I built app to manage schedules, display data and process data from complex forms.',
       organization: {
         name: 'NSI - ADMR',
-        logo: 'admr.svg',
-        url: 'admr.org',
+        logo: { url: 'admr.svg', isBackgroundColorWhite: true },
+        url: 'https://admr.org',
       },
       skills: [
         {
           name: 'Php',
-          logo: 'php.png',
+          logo: { url: 'php.svg' },
         },
         {
           name: 'Angular',
-          logo: 'ng.svg',
+          logo: { url: 'ng.svg' },
         },
         {
           name: 'MySQL',
-          logo: 'mysql.png',
+          logo: { url: 'mysql.png' },
         },
       ],
     },
@@ -35,7 +63,7 @@ export const TIMELINE: TimelineSection[] = [
       title: 'Web Developer',
       organization: {
         name: 'CGI',
-        logo: 'cgi.svg',
+        logo: { url: 'cgi.svg', isBackgroundColorWhite: true },
         url: 'https://www.cgi.fr',
       },
       description:
@@ -43,19 +71,19 @@ export const TIMELINE: TimelineSection[] = [
       skills: [
         {
           name: 'Php',
-          logo: 'php.png',
+          logo: { url: 'php.svg' },
         },
         {
           name: 'AngularJS',
-          logo: 'ngjs.png',
+          logo: { url: 'ngjs.png' },
         },
         {
           name: 'MySQL',
-          logo: 'mysql.png',
+          logo: { url: 'mysql.png' },
         },
         {
           name: 'PostgreSQL',
-          logo: 'pgsql.png',
+          logo: { url: 'pgsql.png' },
         },
       ],
     },
@@ -63,7 +91,7 @@ export const TIMELINE: TimelineSection[] = [
       title: 'Master CPIL',
       organization: {
         name: 'IPI - groupe IGS',
-        logo: 'ipi.png',
+        logo: { url: 'ipi.png' },
         url: 'http://www.ipi-ecoles.com/',
       },
       description:
@@ -71,19 +99,19 @@ export const TIMELINE: TimelineSection[] = [
       skills: [
         {
           name: 'AngularJS',
-          logo: 'ngjs.png',
+          logo: { url: 'ngjs.png' },
         },
         {
           name: 'MySQL',
-          logo: 'mysql.png',
+          logo: { url: 'mysql.png' },
         },
         {
           name: 'C#',
-          logo: 'csharp.png',
+          logo: { url: 'csharp.png' },
         },
         {
           name: 'Angular',
-          logo: 'ng.png',
+          logo: { url: 'ng.png' },
         },
       ],
     },
@@ -94,7 +122,7 @@ export const TIMELINE: TimelineSection[] = [
       title: 'Développeur web',
       organization: {
         name: "Rectorat de l'académie Toulouse",
-        logo: 'rect.svg',
+        logo: { url: 'rect.svg', isBackgroundColorWhite: true },
         url: 'https://www.ac-toulouse.fr',
       },
       description:
@@ -102,15 +130,15 @@ export const TIMELINE: TimelineSection[] = [
       skills: [
         {
           name: 'Php',
-          logo: 'php.png',
+          logo: { url: 'php.svg' },
         },
         {
           name: 'Symfony',
-          logo: 'symfony.png',
+          logo: { url: 'symfony.svg' },
         },
         {
           name: 'MySQL',
-          logo: 'mysql.png',
+          logo: { url: 'mysql.png' },
         },
       ],
     },
@@ -118,7 +146,7 @@ export const TIMELINE: TimelineSection[] = [
       title: 'Licence APSYO',
       organization: {
         name: 'IUT Blagnac',
-        logo: 'iut.png',
+        logo: { url: 'iut.png' },
         url: 'https://www.iut-blagnac.fr',
       },
       description:
@@ -126,27 +154,27 @@ export const TIMELINE: TimelineSection[] = [
       skills: [
         {
           name: 'Java',
-          logo: 'java.png',
+          logo: { url: 'java.png' },
         },
         {
           name: 'Git',
-          logo: 'git.png',
+          logo: { url: 'git.png' },
         },
         {
           name: 'Android',
-          logo: 'android.png',
+          logo: { url: 'android.png' },
         },
         {
           name: 'GWT',
-          logo: 'gwt.png',
+          logo: { url: 'gwt.png' },
         },
         {
           name: 'MySQL',
-          logo: 'mysql.png',
+          logo: { url: 'mysql.png' },
         },
         {
           name: 'C#',
-          logo: 'csharp.png',
+          logo: { url: 'csharp.png' },
         },
       ],
     },

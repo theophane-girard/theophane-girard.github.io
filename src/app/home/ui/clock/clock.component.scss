@@ -23,8 +23,8 @@ $hours-height: $clock-width/4;
   height: $hand-axis-width;
   background: black;
   border-radius: 50%;
-  top: global.horizontalCenter($clock-width, $hand-axis-width);
-  left: global.horizontalCenter($clock-width, $hand-axis-width);
+  top: global.centerElementFromParent($clock-width, $hand-axis-width);
+  left: global.centerElementFromParent($clock-width, $hand-axis-width);
 }
 
 #hours {
@@ -32,7 +32,7 @@ $hours-height: $clock-width/4;
   height: $hours-height;
   position: absolute;
   top: $hours-height;
-  left: global.horizontalCenter($clock-width, $minutes-width);
+  left: global.centerElementFromParent($clock-width, $minutes-width);
   background: $hand-color;
   border-radius: 100% 100% 0 0;
   transform-origin: bottom center;
@@ -43,7 +43,7 @@ $hours-height: $clock-width/4;
   height: $minutes-height;
   position: absolute;
   top: $minutes-height/2;
-  left: global.horizontalCenter($clock-width, $minutes-width);
+  left: global.centerElementFromParent($clock-width, $minutes-width);
   background: $hand-color;
   border-radius: 100% 100% 0 0;
   transform-origin: bottom center;
@@ -55,7 +55,7 @@ $hours-height: $clock-width/4;
   height: $seconds-height;
   position: absolute;
   top: $seconds-height/2;
-  left: global.horizontalCenter($clock-width, $seconds-width);
+  left: global.centerElementFromParent($clock-width, $seconds-width);
   background: $hand-color;
   border-radius: 100% 100% 0 0;
   transform-origin: bottom center;

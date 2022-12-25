@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { SectionComponent } from '../shared/ui/section.component';
 import { TIMELINE } from './data/timeline.mock';
 import { TimelineSection } from './data/timeline.model';
-import { XpSectionComponent } from './ui/xp-section/xp-section.component';
-import { ProgressLineComponent } from './ui/progress-line/progress-line.component';
+import { XpSectionComponent } from './ui/components/xp-section/xp-section.component';
+import { ProgressLineComponent } from './ui/components/progress-line/progress-line.component';
 
 @Component({
   selector: 'cv-xp',
@@ -12,17 +12,39 @@ import { ProgressLineComponent } from './ui/progress-line/progress-line.componen
   imports: [CommonModule, XpSectionComponent, ProgressLineComponent],
   template: `
     <section [style.background]="backgroundColor">
-      <div>
+      <div class="section-container">
         <h1>My Experiences</h1>
         <div
+          id="timeline-container"
+          class="display-flex"
           *ngFor="
             let timelineSection of timelineSections;
+            let first = first;
             let last = last;
             let index = index
           "
         >
-          <cv-xp-section [timelineSection]="timelineSection"></cv-xp-section>
-          <cv-progress-line [index]="index" *ngIf="!last"></cv-progress-line>
+          <div
+            class="display-flex"
+            id="xp-section"
+            [ngClass]="{ 'justify-content-end': index % 2 }"
+          >
+            <cv-xp-section
+              [isFirst]="first"
+              [timelineSection]="timelineSection"
+            ></cv-xp-section>
+          </div>
+          <div
+            class="progress-line-section"
+            [ngClass]="{ 'odd-flip': index % 2 === 0 }"
+          >
+            <cv-progress-line
+              [index]="index"
+              [backgroundColor]="backgroundColor"
+              *ngIf="!last"
+              class="display-flex"
+            ></cv-progress-line>
+          </div>
         </div>
       </div>
     </section>

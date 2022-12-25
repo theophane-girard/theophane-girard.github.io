@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, debounceTime, fromEvent, Observable } from 'rxjs';
-import { ObserveVisibilityDirective } from '../shared/directives/observe-visibility.directive';
 import { tap } from 'rxjs/operators';
 import { WaveBackgrounds } from './data/waves.mock';
 import { SectionComponent } from '../shared/ui/section.component';
@@ -9,7 +8,7 @@ import { SectionComponent } from '../shared/ui/section.component';
 @Component({
   selector: 'cv-wave-separator',
   standalone: true,
-  imports: [CommonModule, ObserveVisibilityDirective],
+  imports: [CommonModule],
   template: `
     <ng-container *ngIf="scroll$ | async"></ng-container>
     <svg viewBox="0 300 900 300">

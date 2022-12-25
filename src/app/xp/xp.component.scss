@@ -1,0 +1,20 @@
+@use './src/assets/global';
+
+#timeline-container {
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+cv-progress-line {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.progress-line-section {
+  margin: global.$progress-line-width/8 0px;
+}
+
+.odd-flip {
+  transform: scaleX(-1);
+}

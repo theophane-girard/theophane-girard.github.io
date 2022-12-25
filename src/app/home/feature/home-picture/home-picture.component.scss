@@ -1,0 +1,59 @@
+@use './src/assets/global';
+
+section {
+  flex-direction: row;
+}
+
+#container {
+  width: global.$container-width;
+  height: global.$container-height;
+  font-size: 12px;
+}
+
+#circle-background {
+  position: absolute;
+  top: global.$circle-background-top;
+  left: global.centerElementFromParent(global.$container-width, global.$circle-background-width);
+  text-align: center;
+  background-color: rgb(230, 230, 230);
+  width: global.$circle-background-width;
+  height: global.$circle-background-width;
+  border-radius: 5em;
+}
+
+#desktop {
+  width: global.$desktop-width;
+  height: global.$desktop-height;
+  background-color: black;
+  position: absolute;
+  top: global.$desktop-top;
+  left: global.centerElementFromParent(global.$container-width, global.$desktop-width);
+  border-radius: 1.66em;
+}
+
+cv-clock {
+  z-index: 6;
+  left: global.$container-width * 0.7;
+  top: global.$container-width * 0.1;
+}
+
+cv-laptop {
+
+}
+
+cv-plant {
+  top: global.$desktop-top - global.$jar-height;
+  left: global.centerElementFromParent(global.$container-width, global.$jar-width) + (global.$desktop-width /2.5);
+}
+
+cv-mug {
+  top: global.$desktop-top - global.$mug-height;
+  left: global.centerElementFromParent(global.$container-width, global.$mug-width) - (global.$desktop-width /3.2);
+}
+
+cv-me {
+  left: global.centerElementFromParent(global.$container-width, global.$me-width);
+  z-index: 1;
+  top: global.$desktop-top - global.$me-height;
+}
+

@@ -12,6 +12,14 @@
           "changeDetection": "OnPush",
           "skipImport": true,
           "standalone": true
+        },
+        "@schematics/angular:pipe": {
+          "skipImport": true,
+          "standalone": true
+        },
+        "@schematics/angular:directive": {
+          "skipImport": true,
+          "standalone": true
         }
       },
       "root": "",

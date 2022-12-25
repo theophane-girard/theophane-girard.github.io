@@ -3,13 +3,15 @@ export interface XpSection {
   description: string;
   organization: {
     name: string;
-    logo: string;
+    logo: Logo;
     url: string;
   };
-  skills: {
-    name: string;
-    logo: string;
-  }[];
+  skills: { name: string; logo: Logo }[];
+}
+
+export interface Logo {
+  url: string;
+  isBackgroundColorWhite?: boolean;
 }
 
 export interface TimelineSection {

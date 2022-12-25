@@ -2,24 +2,25 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionComponent } from '../shared/ui/section.component';
 import { ScoutingPictureComponent } from './features/scouting-picture/scouting-picture.component';
+import { HomeDescriptionComponent } from "../home/feature/home-description/home-description.component";
+import { HobbiesDescriptionComponent } from "./features/hobbies-description/hobbies-description.component";
 
 @Component({
   selector: 'cv-hobbies',
   standalone: true,
-  imports: [CommonModule, ScoutingPictureComponent],
+  imports: [CommonModule, ScoutingPictureComponent, HobbiesDescriptionComponent],
   template: `
     <section [style.background]="backgroundColor">
       <div>
-        <h1>My Hobbies</h1>
-        <h3>Scouting - Activity leader ({{ scoutingDuration }} years)</h3>
-        <i>More than a hobby, an actual lifestyle</i>
+        <cv-hobbies-description></cv-hobbies-description>
       </div>
-      <cv-scouting-picture></cv-scouting-picture>
+      <div>
+        <cv-scouting-picture></cv-scouting-picture>
+      </div>
     </section>
   `,
   styleUrls: ['./hobbies.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HobbiesComponent extends SectionComponent {
-  scoutingDuration = new Date().getFullYear() - 2015;
 }

@@ -1,0 +1,21 @@
+.organization-logo {
+  max-width: 7em;
+}
+
+.skill-logo {
+  max-width: 5em;
+}
+
+.description {
+  text-align: justify;
+}
+
+#container {
+  flex-direction: column;
+  max-width: 40vw;
+}
+
+.white-img {
+  background: white;
+  border: 1px solid black;
+}

@@ -1,8 +1,13 @@
+@function centerElementFromParent($parentWidth, $element-width) {
+  @return ($parentWidth - $element-width) /2;
+}
+
 $container-width: 26.33em;
 $container-height: 16.66em;
 
 $circle-background-width: 10em;
-$circle-background-top: 1.33em;
+//$circle-background-top: 2em;
+$circle-background-top: centerElementFromParent($container-height, $circle-background-width);
 
 $desktop-width: 16.66em;
 $desktop-height: 0.66em;
@@ -40,6 +45,4 @@ $jar-height: $jar-width * 2;
 $me-width: $container-width/3;
 $me-height: $container-height*0.8;
 
-@function horizontalCenter($parentWidth, $element-width) {
-  @return ($parentWidth - $element-width) /2;
-}
+$progress-line-width: 40em;

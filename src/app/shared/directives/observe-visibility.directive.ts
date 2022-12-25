@@ -20,8 +20,8 @@ export class ObserveVisibilityDirective
   @Input() debounceTime = 0;
   @Input() threshold = 1;
 
-  @Output() visible = new EventEmitter<boolean>();
-  // @Output() visible = new EventEmitter<HTMLElement>();
+  // @Output() visible = new EventEmitter<boolean>();
+  @Output() visible = new EventEmitter<HTMLElement>();
 
   private observer: IntersectionObserver | undefined;
   private subject$ = new Subject<{
@@ -61,7 +61,6 @@ export class ObserveVisibilityDirective
   }
 
   private createObserver() {
-    console.log('nkjgfrze');
     const options = {
       rootMargin: '0px',
       threshold: this.threshold,
@@ -73,7 +72,7 @@ export class ObserveVisibilityDirective
     this.observer = new IntersectionObserver(
       (entries, observer) =>
         entries
-          // .filter((entry) => isIntersecting(entry))
+          .filter((entry) => isIntersecting(entry))
           .forEach((entry) => this.subject$.next({ entry, observer })),
       options
     );
@@ -90,12 +89,12 @@ export class ObserveVisibilityDirective
       .pipe(delay(this.debounceTime), filter(Boolean))
       .subscribe(async ({ entry, observer }) => {
         const target = entry.target as HTMLElement;
-        const isStillVisible = await this.isVisible(target);
-        console.log(target);
-        // if (isStillVisible) {
-        this.visible.emit(!!isStillVisible);
-        // observer.unobserve(target);
-        // }
+        const isVisible = await this.isVisible(target);
+        console.log(isVisible, target);
+        if (isVisible) {
+          this.visible.emit(target);
+          observer.unobserve(target);
+        }
       });
   }
 }

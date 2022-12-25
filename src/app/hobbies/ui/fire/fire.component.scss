@@ -10,7 +10,7 @@ $animation-time: 1.5s;
   height: 10em;
   transform-origin: center;
   top: $container-width * 0.5;
-  left: global.horizontalCenter($container-width, 1em);
+  left: global.centerElementFromParent($container-width, 1em);
   border-radius: 1vw;
 }
 
@@ -34,8 +34,8 @@ $animation-time: 1.5s;
   transform: rotate(225deg);
   width: $container-width / 2;
   height: $container-width / 2;
-  left: global.horizontalCenter($container-width, $container-width / 2);
-  top: global.horizontalCenter($container-width, $container-width / 2);
+  left: global.centerElementFromParent($container-width, $container-width / 2);
+  top: global.centerElementFromParent($container-width, $container-width / 2);
 }
 
 .fire {
