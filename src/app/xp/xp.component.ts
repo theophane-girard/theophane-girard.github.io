@@ -39,7 +39,6 @@ import { ProgressLineComponent } from './ui/components/progress-line/progress-li
             [ngClass]="{ 'odd-flip': index % 2 === 0 }"
           >
             <cv-progress-line
-              [index]="index"
               [backgroundColor]="backgroundColor"
               *ngIf="!last"
               class="display-flex"
