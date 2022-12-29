@@ -23,7 +23,7 @@ export const TIMELINE: TimelineSection[] = [
         },
         {
           name: 'Postgres',
-          logo: { url: 'pgsql.png' },
+          logo: { url: 'pgsql.svg' },
         },
       ],
     },
@@ -51,7 +51,7 @@ export const TIMELINE: TimelineSection[] = [
         },
         {
           name: 'MySQL',
-          logo: { url: 'mysql.png' },
+          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
         },
       ],
     },
@@ -75,15 +75,15 @@ export const TIMELINE: TimelineSection[] = [
         },
         {
           name: 'AngularJS',
-          logo: { url: 'ngjs.png' },
+          logo: { url: 'ngjs.svg', isBackgroundColorWhite: true },
         },
         {
           name: 'MySQL',
-          logo: { url: 'mysql.png' },
+          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
         },
         {
           name: 'PostgreSQL',
-          logo: { url: 'pgsql.png' },
+          logo: { url: 'pgsql.svg' },
         },
       ],
     },
@@ -99,11 +99,11 @@ export const TIMELINE: TimelineSection[] = [
       skills: [
         {
           name: 'AngularJS',
-          logo: { url: 'ngjs.png' },
+          logo: { url: 'ngjs.svg' },
         },
         {
           name: 'MySQL',
-          logo: { url: 'mysql.png' },
+          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
         },
         {
           name: 'C#',
@@ -138,7 +138,7 @@ export const TIMELINE: TimelineSection[] = [
         },
         {
           name: 'MySQL',
-          logo: { url: 'mysql.png' },
+          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
         },
       ],
     },
@@ -170,7 +170,7 @@ export const TIMELINE: TimelineSection[] = [
         },
         {
           name: 'MySQL',
-          logo: { url: 'mysql.png' },
+          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
         },
         {
           name: 'C#',

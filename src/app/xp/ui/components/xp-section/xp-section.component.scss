@@ -15,7 +15,22 @@
   max-width: 40vw;
 }
 
-.white-img {
-  background: white;
-  border: 1px solid black;
+.skills-container {
+
+}
+
+.skill {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-1em);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0em);
+  transition: 2s ease-in-out;
 }

@@ -8,9 +8,6 @@ import { BehaviorSubject } from 'rxjs';
   standalone: true,
   imports: [CommonModule, ObserveVisibilityDirective],
   template: `
-    <!--    height="247"-->
-    <!--    viewBox="0 0 361 247"-->
-    <!--    width="361"-->
     <svg
       observeVisibility
       (visible)="visible$.next(true)"
@@ -42,7 +39,6 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProgressLineComponent {
-  @Input() index: number;
   @Input() backgroundColor: string;
   visible$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 }

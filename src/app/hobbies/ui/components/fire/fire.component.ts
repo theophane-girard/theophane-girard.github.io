@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div id="fire-container" class="position-absolute">
+    <div id="fire-container" class="position-relative">
       <div class="flames">
         <div class="fire"></div>
         <div class="fire"></div>

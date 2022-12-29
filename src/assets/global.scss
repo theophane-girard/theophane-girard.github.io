@@ -1,7 +1,10 @@
+@use 'sass:math';
+
 @function centerElementFromParent($parentWidth, $element-width) {
   @return ($parentWidth - $element-width) /2;
 }
 
+$section-width: 80vw;
 $container-width: 26.33em;
 $container-height: 16.66em;
 
@@ -30,7 +33,9 @@ $sticker-width: 0.66em;
 $laptop-width: 6.66em;
 $laptop-height: 5em;
 $laptop-border-radius: 0.33em;
-
+$screen-rotate-deg: -30deg;
+$tilt-height: (math.cos($screen-rotate-deg) * $laptop-height);
+$laptop-top-edge-top: -0.03em;
 //mug
 $mug-width: 1.16em;
 $mug-height: 1.66em;
@@ -46,3 +51,23 @@ $me-width: $container-width/3;
 $me-height: $container-height*0.8;
 
 $progress-line-width: 40em;
+
+// hobbies
+$hobbies-section-height: 40em;
+$hobbies-section-height-wo-unit: 40;
+$cliff-height: 10em;
+$cliff-width: 100em;
+$fire-width: 15em;
+$pine-tree-height: 15.5em;
+$pine-tree-width: 10em;
+
+$tent-width: 11em;
+$tent-height: 6.2em;
+$door-width: 2.5em;
+
+$grass-height: 0.55em;
+$grass-width: 0.5em;
+
+$grass-blade-width: 0.5em;
+$grass-blade-height: 0.1em;
+

@@ -2,13 +2,21 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TimelineSection } from '../../../data/timeline.model';
 import { DurationPipe } from '../../pipes/duration.pipe';
+import { ObserveVisibilityDirective } from '../../../../shared/directives/observe-visibility.directive';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'cv-xp-section',
   standalone: true,
-  imports: [CommonModule, DurationPipe],
+  imports: [CommonModule, DurationPipe, ObserveVisibilityDirective],
   template: `
-    <div id="container" class="display-flex">
+    <div
+      id="container"
+      class="display-flex"
+      observeVisibility
+      (visible)="visible$.next(true)"
+      [ngClass]="{ hidden: !isFirst, visible: isFirst || (visible$ | async) }"
+    >
       <div>
         <a href="{{ timelineSection.pro.organization.url }}" target="_blank">
           <img
@@ -31,13 +39,12 @@ import { DurationPipe } from '../../pipes/duration.pipe';
       </div>
       <div>
         <h2 class="">{{ timelineSection.pro.title }}</h2>
-        <!--        <h3>{{ timelineSection.pro.organization.name }}</h3>-->
       </div>
       <p class="description">
         {{ timelineSection.pro.description }}
       </p>
       <div>
-        <div>
+        <div class="skill display-flex">
           <img
             *ngFor="let skill of timelineSection.pro.skills"
             class="skill-logo"
@@ -46,6 +53,9 @@ import { DurationPipe } from '../../pipes/duration.pipe';
             [style.background]="
               skill.logo.isBackgroundColorWhite ? 'white' : ''
             "
+            [ngClass]="{
+              'white-img': skill.logo.isBackgroundColorWhite
+            }"
           />
         </div>
       </div>
@@ -59,4 +69,5 @@ export class XpSectionComponent {
   @Input() timelineSection: TimelineSection;
   organizationLogoRoot = 'assets/organization-logo/';
   techLogoRoot = 'assets/tech-logo/';
+  visible$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 }

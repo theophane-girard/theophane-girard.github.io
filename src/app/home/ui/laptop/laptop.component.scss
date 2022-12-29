@@ -1,4 +1,5 @@
 @use './src/assets/global';
+@use 'sass:math';
 
 $html-logo-glow: white;
 $chevron-width: 0.33em;
@@ -8,9 +9,9 @@ $chevron-width: 0.33em;
   position: absolute;
   width: global.$laptop-width;
   height: global.$laptop-height;
-  top: global.$desktop-top - (global.$laptop-height + global.$laptop-kb-height/2 + global.$laptop-top-edge-height/2.3);
+  top: global.$desktop-top - (global.$tilt-height + global.$laptop-kb-height + global.$desktop-height + (global.$laptop-top-edge-top* 2));
   left: global.centerElementFromParent(global.$container-width, global.$laptop-width);
-  transform: perspective(33.33em) rotateX(-30deg) rotateY(0) scale3d(1.1, 1.2, 1.1);
+  transform: perspective(33.33em) rotateX(global.$screen-rotate-deg) rotateY(0) scale3d(1.1, 1.2, 1.1);
 
   #laptop-screen {
     width: global.$laptop-width;
@@ -25,7 +26,7 @@ $chevron-width: 0.33em;
     height: global.$laptop-top-edge-height;
     background-color: global.$laptop-kb-background;
     position: absolute;
-    top: -0.03em;
+    top: global.$laptop-top-edge-top;
     border-radius: global.$laptop-border-radius;
     animation: top-edge-animation 4s ease 0s infinite alternate;
   }

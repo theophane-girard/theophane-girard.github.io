@@ -1,6 +1,6 @@
-@use './src/assets/global';
+@use '../../../../../assets/global';
 
-$container-width: 15em;
+$container-width: global.$fire-width;
 $big-fire-width: 4em;
 $animation-time: 1.5s;
 
@@ -11,7 +11,7 @@ $animation-time: 1.5s;
   transform-origin: center;
   top: $container-width * 0.5;
   left: global.centerElementFromParent($container-width, 1em);
-  border-radius: 1vw;
+  border-radius: 1em;
 }
 
 #wood1 {
@@ -40,7 +40,7 @@ $animation-time: 1.5s;
 
 .fire {
   position: absolute;
-  border-radius: 1vw;
+  border-radius: 1em;
 
   &:nth-child(2n + 1) {
     animation: oddFlameAnimation $animation-time ease-in infinite;

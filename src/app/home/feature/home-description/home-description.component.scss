@@ -1,0 +1,45 @@
+.contact-logo {
+  width: 3em;
+  animation: contact-logo 1s ease-in-out;
+}
+
+// fa = font-awesome
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-github {
+  background: whitesmoke;
+  color: black;
+}
+
+.fa-at {
+  background: whitesmoke;
+  color: black;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  transition: 0.2s ease-in-out;
+}
+
+@keyframes contact-logo {
+  0% {
+    opacity: 0;
+    transform: translateX(-1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0em);
+  }
+}
