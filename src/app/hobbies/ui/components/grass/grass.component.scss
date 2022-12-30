@@ -7,17 +7,6 @@ $light-grass-blade-background: #009a46;
   height: global.$grass-height;
   width: global.$grass-width;
 
-  @keyframes grass-animation {
-    0% {
-      border-radius: 20px 0 0 0;
-      border-top: global.$grass-blade-height solid $dark-grass-blade-background;
-    }
-    100% {
-      border-radius: 10px 0 0 0;
-      border-top: global.$grass-blade-height solid red;
-    }
-  }
-
   .neutral-grass-blade {
     z-index: 3;
     border-bottom: 0 solid transparent;
@@ -29,7 +18,6 @@ $light-grass-blade-background: #009a46;
     height: global.$grass-blade-width;
     transform: rotate(90deg);
     right: global.$grass-blade-width;
-    //animation: grass-animation 1s ease-in-out alternate infinite;
   }
 
   .light-grass-blade {
