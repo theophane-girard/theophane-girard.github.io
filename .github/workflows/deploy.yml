@@ -16,6 +16,15 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Publish build
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
+      - name: Publish build
         uses: actions/upload-pages-artifact@v1
         with:
           name: dist
+          path: dist
+#      - uses: actions/deploy-pages@v1.2.3
+#        with:
+#          artifact_name: dist
