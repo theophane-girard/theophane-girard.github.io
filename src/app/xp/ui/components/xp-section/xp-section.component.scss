@@ -1,0 +1,36 @@
+.organization-logo {
+  max-width: 7em;
+}
+
+.skill-logo {
+  max-width: 5em;
+}
+
+.description {
+  text-align: justify;
+}
+
+#container {
+  flex-direction: column;
+  max-width: 40vw;
+}
+
+.skills-container {
+
+}
+
+.skill {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-1em);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0em);
+  transition: 2s ease-in-out;
+}

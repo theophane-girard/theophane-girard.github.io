@@ -12,6 +12,14 @@
           "changeDetection": "OnPush",
           "skipImport": true,
           "standalone": true
+        },
+        "@schematics/angular:pipe": {
+          "skipImport": true,
+          "standalone": true
+        },
+        "@schematics/angular:directive": {
+          "skipImport": true,
+          "standalone": true
         }
       },
       "root": "",
@@ -34,6 +42,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -49,7 +58,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "15kb"
                 }
               ],
               "outputHashing": "all"

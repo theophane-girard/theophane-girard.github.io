@@ -1,15 +1,17 @@
+@use "sass:math";
+
 @use './src/assets/global';
 
 $hand-color: black;
 $clock-width: 2.66em;
 $notch-width: 0.06em;
 $notch-height: 0.66em;
-$minutes-width: $clock-width/25;
-$minutes-height: $clock-width/3;
-$seconds-height: $clock-width/3;
+$minutes-width: math.div($clock-width, 25);
+$minutes-height: math.div($clock-width, 3);
+$seconds-height: math.div($clock-width, 3);
 $seconds-width: 0.06em;
-$hand-axis-width: $clock-width/13;
-$hours-height: $clock-width/4;
+$hand-axis-width: math.div($clock-width, 13);
+$hours-height: $clock-width*0.25;
 
 #clock {
   width: $clock-width;
@@ -23,8 +25,8 @@ $hours-height: $clock-width/4;
   height: $hand-axis-width;
   background: black;
   border-radius: 50%;
-  top: global.horizontalCenter($clock-width, $hand-axis-width);
-  left: global.horizontalCenter($clock-width, $hand-axis-width);
+  top: global.centerElementFromParent($clock-width, $hand-axis-width);
+  left: global.centerElementFromParent($clock-width, $hand-axis-width);
 }
 
 #hours {
@@ -32,7 +34,7 @@ $hours-height: $clock-width/4;
   height: $hours-height;
   position: absolute;
   top: $hours-height;
-  left: global.horizontalCenter($clock-width, $minutes-width);
+  left: global.centerElementFromParent($clock-width, $minutes-width);
   background: $hand-color;
   border-radius: 100% 100% 0 0;
   transform-origin: bottom center;
@@ -42,8 +44,8 @@ $hours-height: $clock-width/4;
   width: $minutes-width;
   height: $minutes-height;
   position: absolute;
-  top: $minutes-height/2;
-  left: global.horizontalCenter($clock-width, $minutes-width);
+  top: $minutes-height*0.5;
+  left: global.centerElementFromParent($clock-width, $minutes-width);
   background: $hand-color;
   border-radius: 100% 100% 0 0;
   transform-origin: bottom center;
@@ -54,8 +56,8 @@ $hours-height: $clock-width/4;
   width: $seconds-width;
   height: $seconds-height;
   position: absolute;
-  top: $seconds-height/2;
-  left: global.horizontalCenter($clock-width, $seconds-width);
+  top: $seconds-height*0.5;
+  left: global.centerElementFromParent($clock-width, $seconds-width);
   background: $hand-color;
   border-radius: 100% 100% 0 0;
   transform-origin: bottom center;

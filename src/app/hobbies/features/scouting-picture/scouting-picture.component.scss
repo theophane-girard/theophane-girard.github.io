@@ -1,0 +1,60 @@
+@use "sass:math";
+
+@use './src/assets/global';
+
+#scout-picture {
+  $scouting-picture-width: 40em;
+  width: $scouting-picture-width;
+  height: global.$hobbies-section-height;
+
+  cv-cliff {
+    top: global.$hobbies-section-height * 0.5;
+  }
+
+  #grass-1 {
+    //top: global.$hobbies-section-height / 2 + (global.$tent-height / 2) - global.$grass-height;
+    top: global.$hobbies-section-height * 0.5 + (global.$tent-height) - global.$grass-height;
+    left: $scouting-picture-width;
+  }
+
+  #grass-2 {
+    top: global.$hobbies-section-height * 0.5 + (global.$tent-height * 0.5) - global.$grass-height;
+    left: $scouting-picture-width - global.$tent-height;
+  }
+
+  #grass-3 {
+    top: global.$hobbies-section-height * 0.5 + (global.$tent-height * 0.5) - global.$grass-height;
+    left: $scouting-picture-width * 0.3;
+    //left: $scouting-picture-width + global.$door-width * 1.5;
+  }
+
+  cv-tent {
+    top: global.$hobbies-section-height * 0.5 - global.$tent-height * 0.5;
+    left: $scouting-picture-width * 0.66;
+  }
+
+  cv-fire {
+    top: global.$hobbies-section-height + global.$cliff-height * 0.5 + global.$fire-width * 0.5;
+    left: $scouting-picture-width * 1.5;
+    font-size: 6px;
+  }
+
+  cv-pine-tree {
+    font-size: 12px;
+    $base-top: (global.$cliff-height * 0.5) + (global.$pine-tree-height * 0.5);
+
+    &#pine-tree-1 {
+      top: $base-top;
+    }
+
+    &#pine-tree-2 {
+      left: global.$pine-tree-width*0.5;
+      top: $base-top * 1.1;
+    }
+
+    &#pine-tree-3 {
+      top: $base-top * 1.12;
+      left: math.div(global.$pine-tree-width, 3);
+    }
+  }
+}

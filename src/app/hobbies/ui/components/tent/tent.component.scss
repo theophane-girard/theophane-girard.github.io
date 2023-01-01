@@ -1,0 +1,85 @@
+@use './src/assets/global';
+
+#tent {
+  width: global.$tent-width;
+  height: global.$tent-height;
+  $left-door-tent-color: #d59857;
+  $right-door-tent-color: #af7c46;
+  $door-height: 5em;
+  $door-zip-width: 0.05em;
+  $side-chamber-width: 5em;
+  $side-chamber-skew: 26.5deg;
+  $roof-height: $door-height * 1.25;
+  $stake-width: 0.1em;
+  $stake-height: $roof-height - $door-height;
+  $stake-background-shade: #8c8c8c;
+  $stake-background: -webkit-linear-gradient(left, #e8e8e8 20%, $stake-background-shade 50%);
+  $stake-edge-background: $stake-background;
+  $stake-edge-width: $stake-width*0.25;
+  $stake-edge-height: $stake-height*0.25;
+
+  #left-door {
+    width: 0;
+    height: 0;
+    border-bottom: $door-height solid $left-door-tent-color;
+    border-left: global.$door-width solid transparent;
+  }
+
+  #right-door {
+    width: 0;
+    height: 0;
+    border-bottom: $door-height solid $right-door-tent-color;
+    border-right: global.$door-width solid transparent;
+    box-shadow: -$door-zip-width 0em 0em #620e0e;
+    left: global.$door-width + $door-zip-width;
+  }
+
+  #side-chamber {
+    width: $side-chamber-width;
+    height: $door-height;
+    transform: skew($side-chamber-skew);
+    background: #402A11;
+    left: (global.$door-width + (global.$door-width*0.5)) + $door-zip-width;
+  }
+
+  #in-roof {
+    width: $side-chamber-width;
+    height: $roof-height;
+    transform: skew(-$side-chamber-skew);
+    background: #4F3516;
+    left: (global.$door-width*0.33) + 2* $door-zip-width;
+  }
+
+  #out-roof {
+    z-index: 2;
+    width: $side-chamber-width;
+    height: $roof-height;
+    transform: skew($side-chamber-skew);
+    background: #795429;
+    left: (global.$door-width * 1.66) - $door-zip-width;
+  }
+
+  #stake {
+    height: $stake-height;
+    width: $stake-width;
+    left: global.$door-width + $door-zip-width;
+    bottom: $door-height;
+    background: $stake-background;
+  }
+
+  #left-stake-edge {
+    width: $stake-edge-width;
+    height: $stake-edge-height;
+    left: global.$door-width + $door-zip-width + $stake-width*0.5;
+    bottom: $door-height + $stake-height;
+    background: $stake-edge-background;
+  }
+
+  #right-stake-edge {
+    width: $stake-edge-width;
+    height: $stake-edge-height * 0.8;
+    left: $side-chamber-width + global.$door-width * 0.97;
+    bottom: $door-height + $stake-height;
+    background: $stake-background-shade;
+  }
+}

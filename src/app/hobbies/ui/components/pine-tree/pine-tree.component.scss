@@ -1,0 +1,53 @@
+@use './src/assets/global';
+
+#container {
+  width: global.$pine-tree-width;
+  height: global.$pine-tree-height;
+
+  $pine-tree-bottom-height: 7em;
+  $pine-tree-middle-height: 6em;
+  $pine-tree-top-height: 5em;
+  $pine-tree-trunk-height: 6em;
+  $pine-tree-trunk-width: 1em;
+  $pine-tree-trunk-height: 2.5em;
+
+  #trunk {
+    width: $pine-tree-trunk-width;
+    height: $pine-tree-trunk-height;
+    background: -webkit-linear-gradient(left, #66503e 20%, #755a47 50%);
+    z-index: 1;
+    bottom: 0;
+    left: global.centerElementFromParent(global.$pine-tree-width, $pine-tree-trunk-width);
+  }
+
+  #pine-tree-bottom {
+    z-index: 2;
+    width: global.$pine-tree-width;
+    height: $pine-tree-bottom-height;
+    bottom: $pine-tree-trunk-height * 0.7;
+    background: #034f33;
+    background: -webkit-linear-gradient(left, #034f33 20%, #03623f 50%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  #pine-tree-middle {
+    width: global.$pine-tree-width * 0.75;
+    height: $pine-tree-middle-height;
+    bottom: $pine-tree-trunk-height * 0.5 + $pine-tree-bottom-height * 0.7;
+    left: (global.$pine-tree-width * 0.25) * 0.5;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: -webkit-linear-gradient(left, #046944 40%, #037e51 50%);;
+    z-index: 3;
+  }
+
+  #pine-tree-top {
+    width: global.$pine-tree-width * 0.5;
+    height: $pine-tree-top-height;
+    bottom: $pine-tree-trunk-height * 0.8 + $pine-tree-bottom-height * 0.7 + $pine-tree-top-height * 0.7;
+    left: (global.$pine-tree-width * 0.5) * 0.5;
+    background: -webkit-linear-gradient(left, #038052 40%, #049f66 50%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 4;
+  }
+}
+
