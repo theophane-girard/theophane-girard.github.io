@@ -9,6 +9,7 @@ import {
   Output,
 } from '@angular/core';
 import { delay, filter, Subject } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 @Directive({
   selector: '[observeVisibility]',
@@ -19,8 +20,6 @@ export class ObserveVisibilityDirective
 {
   @Input() debounceTime = 0;
   @Input() threshold = 1;
-
-  // @Output() visible = new EventEmitter<boolean>();
   @Output() visible = new EventEmitter<HTMLElement>();
 
   private observer: IntersectionObserver | undefined;
@@ -45,19 +44,7 @@ export class ObserveVisibilityDirective
       this.observer = undefined;
     }
 
-    // this.subject$.next({ entry: undefined, observer: undefined });
     this.subject$.complete();
-  }
-
-  private isVisible(element: HTMLElement) {
-    return new Promise((resolve) => {
-      const observer = new IntersectionObserver(([entry]) => {
-        resolve(entry.intersectionRatio === 1);
-        observer.disconnect();
-      });
-
-      observer.observe(element);
-    });
   }
 
   private createObserver() {
@@ -86,15 +73,16 @@ export class ObserveVisibilityDirective
     this.observer.observe(this.element.nativeElement);
 
     this.subject$
-      .pipe(delay(this.debounceTime), filter(Boolean))
-      .subscribe(async ({ entry, observer }) => {
-        const target = entry.target as HTMLElement;
-        const isVisible = await this.isVisible(target);
-        console.log(isVisible, target);
-        if (isVisible) {
-          this.visible.emit(target);
-          observer.unobserve(target);
-        }
-      });
+      .pipe(
+        delay(this.debounceTime),
+        filter(Boolean),
+        map(({ entry, observer }) => ({
+          target: entry.target as HTMLElement,
+          observer,
+        })),
+        tap(({ target, observer }) => this.visible.emit(target)),
+        tap(({ target, observer }) => observer.unobserve(target))
+      )
+      .subscribe();
   }
 }

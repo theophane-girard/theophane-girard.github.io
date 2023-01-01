@@ -3,7 +3,7 @@
 
 $jar-background: orange;
 $jar-shadow-background: rgb(215, 119, 0);
-$cactus-width: global.$jar-width + global.$jar-width/2;
+$cactus-width: global.$jar-width + global.$jar-width*0.5;
 $cactus-background: #92b64c;
 $cactus-shade: #84a841;
 
@@ -23,10 +23,10 @@ $cactus-shade: #84a841;
   width: 0;
   height: 0;
   border-left: global.$jar-height solid transparent;
-  border-bottom: global.$jar-height/4 solid $jar-background;
+  border-bottom: global.$jar-height*0.25 solid $jar-background;
   transform: rotate(-90deg);
-  left: -(global.$jar-width + global.$jar-height/8) + 0.03em;
-  top: (global.$jar-height / 2) - global.$jar-height/8;
+  left: -(global.$jar-width + global.$jar-height*0.125) + 0.03em;
+  top: (global.$jar-height * 0.5) - global.$jar-height*0.125;
 }
 
 #jar-right {
@@ -34,18 +34,18 @@ $cactus-shade: #84a841;
   width: 0;
   height: 0;
   border-right: global.$jar-height solid transparent;
-  border-bottom: global.$jar-height/4 solid $jar-shadow-background;
+  border-bottom: global.$jar-height*0.25 solid $jar-shadow-background;
   transform: rotate(90deg);
-  left: (global.$jar-width/4) - 0.03em;
-  top: ((global.$jar-height / 2) - global.$jar-height/8);
+  left: (global.$jar-width*0.25) - 0.03em;
+  top: ((global.$jar-height * 0.5) - global.$jar-height*0.125);
 }
 
 #jar-top {
   z-index: 9;
   width: global.$jar-width * 2;
-  height: global.$jar-height / 4;
-  top: -(global.$jar-height/8);
-  left: -(global.$jar-height/4);
+  height: global.$jar-height * 0.25;
+  top: -(global.$jar-height*0.125);
+  left: -(global.$jar-height*0.25);
   box-shadow: 0 0.03em 0.03em 0 $jar-shadow-background;
   background: -webkit-linear-gradient(
       left,
@@ -59,8 +59,8 @@ $cactus-shade: #84a841;
   width: $cactus-width;
   height: global.$jar-height;
   background: -webkit-linear-gradient(left, $cactus-background 51%, $cactus-shade 50%);
-  top: -(global.$jar-height) + global.$jar-height/8;
-  left: -(global.$jar-height/8);
+  top: -(global.$jar-height) + global.$jar-height*0.125;
+  left: -(global.$jar-height*0.125);
   border-radius: 50%;
 
 
@@ -70,16 +70,16 @@ $cactus-shade: #84a841;
     position: absolute;
     z-index: 300;
     content: "";
-    border-bottom: global.$jar-width/4 solid #92b64c;
-    border-left: global.$jar-width/8 solid transparent;
-    border-right: global.$jar-width/8 solid transparent;
+    border-bottom: global.$jar-width*0.25 solid #92b64c;
+    border-left: global.$jar-width*0.125 solid transparent;
+    border-right: global.$jar-width*0.125 solid transparent;
   }
 
   @mixin thorn-left-x($index) {
     @if ($index == 1) {
       left: 0.3em;
     } @else {
-      left: -(math.log($index) * 0.6em)/3;
+      left: math.div(-(math.log($index) * 0.6em), 3);
     }
   }
 
@@ -95,7 +95,7 @@ $cactus-shade: #84a841;
     @if ($index == 1) {
       left: 1.5em;
     } @else {
-      left: (math.log($index)/0.61) * 1em;
+      left: math.div(math.log($index), 0.61) * 1em;
     }
   }
 
@@ -109,9 +109,9 @@ $cactus-shade: #84a841;
 
   @for $i from 1 through 3 {
     .thorn-right:nth-of-type(#{$i}) {
-      border-bottom: global.$jar-width/4 solid $cactus-shade;
-      border-left: global.$jar-width/8 solid transparent;
-      border-right: global.$jar-width/8 solid transparent;
+      border-bottom: global.$jar-width*0.25 solid $cactus-shade;
+      border-left: global.$jar-width*0.125 solid transparent;
+      border-right: global.$jar-width*0.125 solid transparent;
       transform: rotateZ(calc(210deg - (#{$i} * 40deg)));
       @include thorn-right-y($i);
       @include thorn-right-x($i);

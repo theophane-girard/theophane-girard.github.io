@@ -15,8 +15,8 @@
   $stake-background-shade: #8c8c8c;
   $stake-background: -webkit-linear-gradient(left, #e8e8e8 20%, $stake-background-shade 50%);
   $stake-edge-background: $stake-background;
-  $stake-edge-width: $stake-width/4;
-  $stake-edge-height: $stake-height/4;
+  $stake-edge-width: $stake-width*0.25;
+  $stake-edge-height: $stake-height*0.25;
 
   #left-door {
     width: 0;
@@ -39,7 +39,7 @@
     height: $door-height;
     transform: skew($side-chamber-skew);
     background: #402A11;
-    left: (global.$door-width + (global.$door-width/2)) + $door-zip-width;
+    left: (global.$door-width + (global.$door-width*0.5)) + $door-zip-width;
   }
 
   #in-roof {
@@ -70,7 +70,7 @@
   #left-stake-edge {
     width: $stake-edge-width;
     height: $stake-edge-height;
-    left: global.$door-width + $door-zip-width + $stake-width/2;
+    left: global.$door-width + $door-zip-width + $stake-width*0.5;
     bottom: $door-height + $stake-height;
     background: $stake-edge-background;
   }

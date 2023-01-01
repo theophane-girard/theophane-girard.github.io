@@ -34,7 +34,7 @@
     width: global.$pine-tree-width * 0.75;
     height: $pine-tree-middle-height;
     bottom: $pine-tree-trunk-height * 0.5 + $pine-tree-bottom-height * 0.7;
-    left: (global.$pine-tree-width * 0.25) / 2;
+    left: (global.$pine-tree-width * 0.25) * 0.5;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     background: -webkit-linear-gradient(left, #046944 40%, #037e51 50%);;
     z-index: 3;
@@ -44,7 +44,7 @@
     width: global.$pine-tree-width * 0.5;
     height: $pine-tree-top-height;
     bottom: $pine-tree-trunk-height * 0.8 + $pine-tree-bottom-height * 0.7 + $pine-tree-top-height * 0.7;
-    left: (global.$pine-tree-width * 0.5) / 2;
+    left: (global.$pine-tree-width * 0.5) * 0.5;
     background: -webkit-linear-gradient(left, #038052 40%, #049f66 50%);
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     z-index: 4;

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @use './src/assets/global';
 
 section {
@@ -43,12 +45,12 @@ cv-laptop {
 
 cv-plant {
   top: global.$desktop-top - global.$jar-height;
-  left: global.centerElementFromParent(global.$container-width, global.$jar-width) + (global.$desktop-width /2.5);
+  left: global.centerElementFromParent(global.$container-width, global.$jar-width) + math.div(global.$desktop-width, 2.5);
 }
 
 cv-mug {
   top: global.$desktop-top - global.$mug-height;
-  left: global.centerElementFromParent(global.$container-width, global.$mug-width) - (global.$desktop-width /3.2);
+  left: global.centerElementFromParent(global.$container-width, global.$mug-width) - math.div(global.$desktop-width, 3.2);
 }
 
 cv-me {

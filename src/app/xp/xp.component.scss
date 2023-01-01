@@ -12,7 +12,7 @@ cv-progress-line {
 }
 
 .progress-line-section {
-  margin: global.$progress-line-width/8 0px;
+  margin: global.$progress-line-width*0.125 0px;
 }
 
 .odd-flip {

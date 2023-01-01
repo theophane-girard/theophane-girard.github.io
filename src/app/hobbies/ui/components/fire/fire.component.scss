@@ -32,10 +32,10 @@ $animation-time: 1.5s;
 .flames {
   position: absolute;
   transform: rotate(225deg);
-  width: $container-width / 2;
-  height: $container-width / 2;
-  left: global.centerElementFromParent($container-width, $container-width / 2);
-  top: global.centerElementFromParent($container-width, $container-width / 2);
+  width: $container-width * 0.5;
+  height: $container-width * 0.5;
+  left: global.centerElementFromParent($container-width, $container-width * 0.5);
+  top: global.centerElementFromParent($container-width, $container-width * 0.5);
 }
 
 .fire {
@@ -55,15 +55,15 @@ $animation-time: 1.5s;
   }
 
   &:nth-child(2) {
-    animation-delay: $animation-time/4;
+    animation-delay: $animation-time*0.25;
   }
 
   &:nth-child(3) {
-    animation-delay: $animation-time/4 * 2;
+    animation-delay: $animation-time*0.25 * 2;
   }
 
   &:nth-child(4) {
-    animation-delay: $animation-time/4 * 3;
+    animation-delay: $animation-time*0.25 * 3;
   }
 }
 

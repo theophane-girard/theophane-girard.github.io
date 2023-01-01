@@ -46,7 +46,7 @@ $chevron-width: 0.33em;
       position: absolute;
       top: global.centerElementFromParent(global.$laptop-height, global.$logo-width);
       left: global.centerElementFromParent(global.$laptop-width, global.$logo-width) +
-        (global.$slash-width/1.5);
+        math.div(global.$slash-width, 1.5);
       width: global.$logo-width;
       height: global.$logo-width;
       border: 0.06em solid transparent;
@@ -57,7 +57,7 @@ $chevron-width: 0.33em;
       content: "";
       left: 0.33em;
       top: 0.23em;
-      width: $chevron-width/8;
+      width: $chevron-width*0.125;
       height: $chevron-width;
       animation: half-yellow-shadow 3s ease infinite alternate;
       transform: rotate(45deg);
@@ -88,14 +88,14 @@ $chevron-width: 0.33em;
       border-radius: 3.33em;
       top: global.centerElementFromParent(global.$laptop-height, global.$logo-width);
       left: global.centerElementFromParent(global.$laptop-width, global.$logo-width) -
-        (global.$slash-width/1.5);
+        math.div(global.$slash-width, 1.5);
     }
 
     #chevron-left::before {
       content: "";
       left: 0.25em;
       top: 0.03em;
-      width: $chevron-width/8;
+      width: $chevron-width*0.125;
       height: $chevron-width;
       animation: half-yellow-shadow 3s ease infinite alternate;
       transform: rotate(45deg);

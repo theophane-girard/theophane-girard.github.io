@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 @function centerElementFromParent($parentWidth, $element-width) {
-  @return ($parentWidth - $element-width) /2;
+  @return ($parentWidth - $element-width) *0.5;
 }
 
 $section-width: 80vw;
@@ -44,10 +44,10 @@ $mug-background: #f65c22;
 $mug-shadow: #bc3300;
 $desktop-top: $circle-background-top + $circle-background-width;
 
-$jar-width: $laptop-width/5;
+$jar-width: $laptop-width*0.2;
 $jar-height: $jar-width * 2;
 
-$me-width: $container-width/3;
+$me-width: math.div($container-width, 3);
 $me-height: $container-height*0.8;
 
 $progress-line-width: 40em;
