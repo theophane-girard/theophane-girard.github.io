@@ -20,6 +20,6 @@ jobs:
         with:
           name: dist
           path: dist
-      - uses: actions/deploy-pages@v1
+      - uses: actions/deploy-pages@v1.2.3
         with:
           artifact: dist
