@@ -1,22 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HobbiesComponent } from './hobbies.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
-describe('OthersComponent', () => {
-  let component: HobbiesComponent;
-  let fixture: ComponentFixture<HobbiesComponent>;
+describe('HobbiesComponent', () => {
+  let spectator: Spectator<HobbiesComponent>;
+  const createComponent = createComponentFactory(HobbiesComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HobbiesComponent],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(HobbiesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should create the HobbiesComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have description and picture hidden at load and visible at visible$ emit', () => {
+    expect(spectator.component).toBeTruthy();
+    expect(spectator.query('.visible')).toBeFalsy();
+    spectator.component.visible$.next(true);
+    spectator.detectComponentChanges();
+    expect(spectator.query('.visible')).toBeTruthy();
   });
 });

@@ -4,9 +4,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 1em 0 0 0;
 }
 
-#description {
-  min-width: global.$container-width*0.7;
+@media (max-width: 768px) {
+  #content {
+    flex-direction: column;
+  }
 }
-

@@ -5,15 +5,12 @@
   border-top: 10em solid #277047;
   border-right: global.$cliff-width solid transparent;
   border-bottom: 0 solid transparent;
-  border-left: 20em solid transparent;
+  border-left: global.$cliff-side-shade-width solid transparent;
 }
 
 #cliff-shade {
-  z-index: 1;
-  border-bottom: global.$hobbies-section-height solid #282438;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  height: 0;
   width: global.$cliff-width;
-  transform: rotate(180deg)
+  height: global.$hobbies-section-height;
+  background: -webkit-linear-gradient(left, #282438 global.$cliff-side-shade-width, #19202f 0em);
+  z-index: 1;
 }

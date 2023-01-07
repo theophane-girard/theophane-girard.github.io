@@ -1,23 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PineTreeComponent } from './pine-tree.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('PineTreeComponent', () => {
-  let component: PineTreeComponent;
-  let fixture: ComponentFixture<PineTreeComponent>;
+  let spectator: Spectator<PineTreeComponent>;
+  const createComponent = createComponentFactory(PineTreeComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ PineTreeComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(PineTreeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the PineTreeComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

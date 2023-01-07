@@ -1,23 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HomeDescriptionComponent } from './home-description.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('HomeDescriptionComponent', () => {
-  let component: HomeDescriptionComponent;
-  let fixture: ComponentFixture<HomeDescriptionComponent>;
+  let spectator: Spectator<HomeDescriptionComponent>;
+  const createComponent = createComponentFactory(HomeDescriptionComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ HomeDescriptionComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(HomeDescriptionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the HomeDescriptionComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'duration',
+  name: 'currentDuration',
   standalone: true,
 })
-export class DurationPipe implements PipeTransform {
+export class CurrentDurationPipe implements PipeTransform {
   transform(value: string, isFirst: boolean): unknown {
     if (!isFirst) {
       return value;

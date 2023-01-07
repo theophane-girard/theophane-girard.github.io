@@ -1,24 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ClockComponent } from './clock.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('ClockComponent', () => {
-  let component: ClockComponent;
-  let fixture: ComponentFixture<ClockComponent>;
+  let spectator: Spectator<ClockComponent>;
+  const createComponent = createComponentFactory(ClockComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ClockComponent],
-    }).compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ClockComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the ClockComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

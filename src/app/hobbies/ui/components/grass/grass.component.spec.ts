@@ -1,23 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GrassComponent } from './grass.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('GrassComponent', () => {
-  let component: GrassComponent;
-  let fixture: ComponentFixture<GrassComponent>;
+  let spectator: Spectator<GrassComponent>;
+  const createComponent = createComponentFactory(GrassComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ GrassComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(GrassComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the GrassComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

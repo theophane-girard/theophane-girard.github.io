@@ -1,23 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WaveSeparatorComponent } from './wave-separator.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('WaveSeparatorComponent', () => {
-  let component: WaveSeparatorComponent;
-  let fixture: ComponentFixture<WaveSeparatorComponent>;
+  let spectator: Spectator<WaveSeparatorComponent>;
+  const createComponent = createComponentFactory(WaveSeparatorComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ WaveSeparatorComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(WaveSeparatorComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the WaveSeparatorComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

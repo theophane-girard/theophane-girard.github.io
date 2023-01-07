@@ -1,23 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TentComponent } from './tent.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('TentComponent', () => {
-  let component: TentComponent;
-  let fixture: ComponentFixture<TentComponent>;
+  let spectator: Spectator<TentComponent>;
+  const createComponent = createComponentFactory(TentComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ TentComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(TentComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the TentComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

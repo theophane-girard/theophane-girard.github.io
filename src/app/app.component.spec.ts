@@ -1,25 +1,12 @@
-import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-    }).compileComponents();
-  });
+  let spectator: Spectator<AppComponent>;
+  const createComponent = createComponentFactory(AppComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'cv-2023 app is running!'
-    );
+    expect(spectator.component).toBeTruthy();
   });
 });

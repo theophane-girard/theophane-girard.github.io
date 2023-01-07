@@ -13,10 +13,19 @@
 #container {
   flex-direction: column;
   max-width: 40vw;
+  border-top: 5px solid;
+  background: white;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 30px 40px -20px hsl(229, 6%, 66%);
+  padding: 3em;
+  margin: 20px;
 }
 
-.skills-container {
-
+@media (max-width: 1200px) {
+  #container {
+    max-width: unset;
+  }
 }
 
 .skill {

@@ -8,7 +8,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { delay, filter, Subject } from 'rxjs';
+import { delay, filter, Subject, take } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 @Directive({
@@ -81,7 +81,8 @@ export class ObserveVisibilityDirective
           observer,
         })),
         tap(({ target, observer }) => this.visible.emit(target)),
-        tap(({ target, observer }) => observer.unobserve(target))
+        tap(({ target, observer }) => observer.unobserve(target)),
+        take(1)
       )
       .subscribe();
   }

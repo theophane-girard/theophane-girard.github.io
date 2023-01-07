@@ -1,6 +1,7 @@
 svg {
   display: block;
   width: 100vw;
+  min-width: 30em;
 }
 
 @for $i from 0 through 5 {

@@ -1,24 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PlantComponent } from './plant.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('PlantComponent', () => {
-  let component: PlantComponent;
-  let fixture: ComponentFixture<PlantComponent>;
+  let spectator: Spectator<PlantComponent>;
+  const createComponent = createComponentFactory(PlantComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [PlantComponent],
-    }).compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PlantComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the PlantComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

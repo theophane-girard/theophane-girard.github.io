@@ -8,16 +8,15 @@ describe('HobbiesDescriptionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ HobbiesDescriptionComponent ]
-    })
-    .compileComponents();
+      imports: [HobbiesDescriptionComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HobbiesDescriptionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create HobbiesDescriptionComponent', () => {
     expect(component).toBeTruthy();
   });
 });
