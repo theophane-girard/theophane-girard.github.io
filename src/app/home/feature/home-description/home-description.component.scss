@@ -3,6 +3,19 @@
   animation: contact-logo 1s ease-in-out;
 }
 
+#name {
+  margin-bottom: 0;
+}
+
+#logo-container {
+  align-items: flex-start;
+  margin-left: 0.5em;
+
+  #logo {
+    width: 1em;
+  }
+}
+
 // fa = font-awesome
 .fa {
   padding: 20px;

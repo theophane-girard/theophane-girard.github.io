@@ -6,7 +6,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <h1>Théophane Girard</h1>
+    <div class="display-flex">
+      <div>
+        <h1 id="name">Théophane Girard</h1>
+      </div>
+      <div id="logo-container" class="display-flex">
+        <img id="logo" src="assets/logo.png" alt="logo" />
+      </div>
+    </div>
     <h3>Angular developer</h3>
     <i>Working on angular projects since 2018</i>
     <div class="display-flex">
