@@ -1,22 +1,27 @@
 @use '../../../../../assets/global';
 
-.dashed {
-  stroke-dasharray: 10;
-}
+svg {
+  width: 70vw;
+  height: 20vw;
 
-.path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 1s linear alternate;
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 1000;
+  .dashed {
+    stroke-dasharray: 10;
   }
-  to {
-    stroke-dashoffset: 0;
+
+  .path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 1s linear alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+  }
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 }

@@ -1,23 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { XpComponent } from './xp.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('XpComponent', () => {
-  let component: XpComponent;
-  let fixture: ComponentFixture<XpComponent>;
+  let spectator: Spectator<XpComponent>;
+  const createComponent = createComponentFactory(XpComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ XpComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(XpComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the xp component', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

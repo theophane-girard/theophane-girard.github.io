@@ -6,7 +6,7 @@ export const TIMELINE: TimelineSection[] = [
     pro: {
       title: 'Fullstack developer',
       description:
-        'Fullstack developer (Angular & NodeJs x TypeOrm) at Sogeti - part of Capgemini. I built apps which display, calculate and process complex data.',
+        'Fullstack developer at Sogeti - part of Capgemini. I built apps which display, calculate and process complex data.',
       organization: {
         name: 'Sogeti - Capgemini',
         logo: { url: 'sogeti.svg', isBackgroundColorWhite: true },
@@ -18,8 +18,11 @@ export const TIMELINE: TimelineSection[] = [
           logo: { url: 'ng.svg' },
         },
         {
-          name: 'Node',
+          name: 'NodeJs',
           logo: { url: 'node.svg' },
+        },
+        {
+          name: 'TypeOrm',
         },
         {
           name: 'Postgres',
@@ -42,12 +45,12 @@ export const TIMELINE: TimelineSection[] = [
       },
       skills: [
         {
-          name: 'Php',
-          logo: { url: 'php.svg' },
-        },
-        {
           name: 'Angular',
           logo: { url: 'ng.svg' },
+        },
+        {
+          name: 'Php',
+          logo: { url: 'php.svg' },
         },
         {
           name: 'MySQL',
@@ -70,12 +73,12 @@ export const TIMELINE: TimelineSection[] = [
         "Au sein de CGI, j'ai eu le rôle d'Agent support et d'Analyste Développeur. Mes missions consistaient à faire évoluer des applications Php et AngularJS ainsi que d'assurer le support de ces outils.",
       skills: [
         {
-          name: 'Php',
-          logo: { url: 'php.svg' },
-        },
-        {
           name: 'AngularJS',
           logo: { url: 'ngjs.svg', isBackgroundColorWhite: true },
+        },
+        {
+          name: 'Php',
+          logo: { url: 'php.svg' },
         },
         {
           name: 'MySQL',

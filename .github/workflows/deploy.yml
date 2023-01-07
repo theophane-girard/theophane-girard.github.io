@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: npm install
+      - name: Tests
+        run: npm run ci:test
       - name: Build project
         run: npm run build
       - name: Setup Pages

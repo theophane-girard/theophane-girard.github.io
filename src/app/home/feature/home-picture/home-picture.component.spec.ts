@@ -1,23 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HomePictureComponent } from './home-picture.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('HomePictureComponent', () => {
-  let component: HomePictureComponent;
-  let fixture: ComponentFixture<HomePictureComponent>;
+  let spectator: Spectator<HomePictureComponent>;
+  const createComponent = createComponentFactory(HomePictureComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ HomePictureComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(HomePictureComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the HomePictureComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

@@ -1,54 +1,8 @@
 @use 'sass:math';
 
-@function centerElementFromParent($parentWidth, $element-width) {
-  @return ($parentWidth - $element-width) *0.5;
-}
-
-$section-width: 80vw;
-$container-width: 26.33em;
-$container-height: 16.66em;
-
-$circle-background-width: 10em;
-//$circle-background-top: 2em;
-$circle-background-top: centerElementFromParent($container-height, $circle-background-width);
-
-$desktop-width: 16.66em;
-$desktop-height: 0.66em;
-
-//laptop
-//top-edge
-$laptop-top-edge-height: 0.33em;
-
-//kb
-$laptop-kb-height: 0.33em;
-$laptop-kb-background: rgb(133, 133, 133);
-
-//screen
-$logo-width: 0.73em;
-$slash-height: 0.06em;
-$slash-width: 0.46em;
-
-$sticker-width: 0.66em;
-
-$laptop-width: 6.66em;
-$laptop-height: 5em;
-$laptop-border-radius: 0.33em;
-$screen-rotate-deg: -30deg;
-$tilt-height: (math.cos($screen-rotate-deg) * $laptop-height);
-$laptop-top-edge-top: -0.03em;
-//mug
-$mug-width: 1.16em;
-$mug-height: 1.66em;
-$mug-background: #f65c22;
-//mug-shadow
-$mug-shadow: #bc3300;
-$desktop-top: $circle-background-top + $circle-background-width;
-
-$jar-width: $laptop-width*0.2;
-$jar-height: $jar-width * 2;
-
-$me-width: math.div($container-width, 3);
-$me-height: $container-height*0.8;
+@forward './styles/utils';
+@forward "./styles/shared";
+@forward './styles/home';
 
 $progress-line-width: 40em;
 
@@ -57,6 +11,7 @@ $hobbies-section-height: 40em;
 $hobbies-section-height-wo-unit: 40;
 $cliff-height: 10em;
 $cliff-width: 100em;
+$cliff-side-shade-width: 20em;
 $fire-width: 15em;
 $pine-tree-height: 15.5em;
 $pine-tree-width: 10em;

@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <article id="clock" class="position-absolute">
       <div class="position-absolute" id="hand-axis"></div>
-      <embed id="notches" src="assets/clock.svg" />
+      <embed id="notches" src="assets/others/clock.svg" />
       <div class="hours-container">
         <div
           id="hours"

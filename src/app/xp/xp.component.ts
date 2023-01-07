@@ -5,6 +5,7 @@ import { TIMELINE } from './data/timeline.mock';
 import { TimelineSection } from './data/timeline.model';
 import { XpSectionComponent } from './ui/components/xp-section/xp-section.component';
 import { ProgressLineComponent } from './ui/components/progress-line/progress-line.component';
+import { XP_TOP_EDGE_COLORS } from '../shared/data/shared.constants';
 
 @Component({
   selector: 'cv-xp',
@@ -32,6 +33,7 @@ import { ProgressLineComponent } from './ui/components/progress-line/progress-li
             <cv-xp-section
               [isFirst]="first"
               [timelineSection]="timelineSection"
+              [topEdgeColor]="topEdgeColors[index]"
             ></cv-xp-section>
           </div>
           <div
@@ -53,4 +55,5 @@ import { ProgressLineComponent } from './ui/components/progress-line/progress-li
 })
 export class XpComponent extends SectionComponent {
   readonly timelineSections: TimelineSection[] = TIMELINE;
+  readonly topEdgeColors: string[] = XP_TOP_EDGE_COLORS;
 }

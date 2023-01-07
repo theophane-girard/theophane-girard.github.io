@@ -12,12 +12,8 @@ import { HomeDescriptionComponent } from './feature/home-description/home-descri
     <section [style.background]="backgroundColor">
       <div class="section-container">
         <div id="content">
-          <div id="description">
-            <cv-home-description></cv-home-description>
-          </div>
-          <div id="picture">
-            <cv-home-picture></cv-home-picture>
-          </div>
+          <cv-home-description></cv-home-description>
+          <cv-home-picture></cv-home-picture>
         </div>
       </div>
     </section>

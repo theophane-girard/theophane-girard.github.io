@@ -12,10 +12,8 @@ import { BehaviorSubject } from 'rxjs';
       observeVisibility
       (visible)="visible$.next(true)"
       fill="none"
-      width="692"
-      height="290"
-      viewBox="0 0 692 290"
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 692 290"
     >
       <path
         d="M630.975 1.16841C652.602 192.102 596.399 227.341 495.362 238.81C394.324 250.28 272.787 148.982 164.642 169.584C56.497 190.186 -22.2122 318.862 10.386 412.572"

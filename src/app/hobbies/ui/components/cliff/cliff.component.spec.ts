@@ -1,23 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CliffComponent } from './cliff.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 describe('CliffComponent', () => {
-  let component: CliffComponent;
-  let fixture: ComponentFixture<CliffComponent>;
+  let spectator: Spectator<CliffComponent>;
+  const createComponent = createComponentFactory(CliffComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ CliffComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(CliffComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the CliffComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

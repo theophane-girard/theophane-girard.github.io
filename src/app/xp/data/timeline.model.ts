@@ -1,3 +1,8 @@
+export interface Skill {
+  name: string;
+  logo?: Logo;
+}
+
 export interface XpSection {
   title: string;
   description: string;
@@ -6,7 +11,7 @@ export interface XpSection {
     logo: Logo;
     url: string;
   };
-  skills: { name: string; logo: Logo }[];
+  skills: Skill[];
 }
 
 export interface Logo {

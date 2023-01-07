@@ -1,22 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ScoutingPictureComponent } from './scouting-picture.component';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
-describe('IllustrationComponent', () => {
-  let component: ScoutingPictureComponent;
-  let fixture: ComponentFixture<ScoutingPictureComponent>;
+describe('ScoutingPictureComponent', () => {
+  let spectator: Spectator<ScoutingPictureComponent>;
+  const createComponent = createComponentFactory(ScoutingPictureComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ScoutingPictureComponent],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(ScoutingPictureComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the ScoutingPictureComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

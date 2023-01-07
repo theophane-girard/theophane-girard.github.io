@@ -1,0 +1,3 @@
+@function centerElementFromParent($parentWidth, $element-width) {
+  @return ($parentWidth - $element-width) *0.5;
+}

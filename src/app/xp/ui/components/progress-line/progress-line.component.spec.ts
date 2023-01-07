@@ -1,23 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 import { ProgressLineComponent } from './progress-line.component';
 
 describe('ProgressLineComponent', () => {
-  let component: ProgressLineComponent;
-  let fixture: ComponentFixture<ProgressLineComponent>;
+  let spectator: Spectator<ProgressLineComponent>;
+  const createComponent = createComponentFactory(ProgressLineComponent);
+  beforeEach(async () => (spectator = createComponent()));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ ProgressLineComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(ProgressLineComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should create the ProgressLineComponent', () => {
+    expect(spectator.component).toBeTruthy();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be hidden', () => {
+    expect(spectator.query('.animation-running')).toBeFalsy();
+  });
+
+  it('should be hidden at first render and should be visible when visible$ emit value', () => {
+    expect(spectator.query('.animation-running')).toBeFalsy();
+    spectator.component.visible$.next(true);
+    spectator.detectComponentChanges();
+    expect(spectator.query('.animation-running')).toBeTruthy();
   });
 });

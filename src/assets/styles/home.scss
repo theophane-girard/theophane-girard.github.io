@@ -1,0 +1,44 @@
+@use 'sass:math';
+@use './shared';
+@use './utils';
+
+$circle-background-width: 10em;
+$circle-background-top: utils.centerElementFromParent(shared.$container-height, $circle-background-width);
+
+$desktop-width: 16.66em;
+$desktop-height: 0.66em;
+
+//laptop
+//top-edge
+$laptop-top-edge-height: 0.33em;
+
+//kb
+$laptop-kb-height: 0.33em;
+$laptop-kb-background: rgb(133, 133, 133);
+
+//screen
+$logo-width: 0.73em;
+$slash-height: 0.06em;
+$slash-width: 0.46em;
+
+$sticker-width: 0.66em;
+
+$laptop-width: 6.66em;
+$laptop-height: 5em;
+$laptop-border-radius: 0.33em;
+$screen-rotate-deg: -30deg;
+$tilt-height: (math.cos($screen-rotate-deg) * $laptop-height);
+$laptop-top-edge-top: -0.03em;
+//mug
+$mug-width: 1.16em;
+$mug-height: 1.66em;
+$mug-background: #f65c22;
+//mug-shadow
+$mug-shadow: #bc3300;
+$desktop-top: $circle-background-top + $circle-background-width;
+
+$jar-width: $laptop-width*0.2;
+$jar-height: $jar-width * 2;
+
+$me-width: math.div(shared.$container-width, 3);
+$me-height: shared.$container-height*0.8;
