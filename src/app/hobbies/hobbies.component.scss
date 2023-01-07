@@ -23,4 +23,10 @@ section {
       justify-content: unset;
     }
   }
+
+  @media (max-width: 750px) {
+    cv-scouting-picture {
+      font-size: 10px;
+    }
+  }
 }

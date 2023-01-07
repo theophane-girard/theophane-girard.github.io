@@ -39,6 +39,12 @@
     font-size: 6px;
   }
 
+  @media (max-width: 750px) {
+    cv-fire {
+      font-size: 4px;
+    }
+  }
+
   cv-pine-tree {
     font-size: 12px;
     $base-top: (global.$cliff-height * 0.5) + (global.$pine-tree-height * 0.5);
@@ -55,6 +61,30 @@
     &#pine-tree-3 {
       top: $base-top * 1.12;
       left: math.div(global.$pine-tree-width, 3);
+    }
+
+    @media (max-width: 750px) {
+      $base-top: $base-top  * 0.9;
+
+      &#pine-tree-1 {
+        top: $base-top;
+      }
+
+      &#pine-tree-2 {
+        left: global.$pine-tree-width*0.5;
+        top: $base-top * 1.1;
+      }
+
+      &#pine-tree-3 {
+        top: $base-top * 1.12;
+        left: math.div(global.$pine-tree-width, 3);
+      }
+    }
+  }
+
+  @media (max-width: 750px) {
+    cv-pine-tree {
+      font-size: 8px;
     }
   }
 }
