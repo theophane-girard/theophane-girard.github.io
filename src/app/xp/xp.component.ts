@@ -6,6 +6,7 @@ import { TimelineSection } from './data/timeline.model';
 import { XpSectionComponent } from './ui/components/xp-section/xp-section.component';
 import { ProgressLineComponent } from './ui/components/progress-line/progress-line.component';
 import { XP_TOP_EDGE_COLORS } from '../shared/data/shared.constants';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'cv-xp',
@@ -56,4 +57,19 @@ import { XP_TOP_EDGE_COLORS } from '../shared/data/shared.constants';
 export class XpComponent extends SectionComponent {
   readonly timelineSections: TimelineSection[] = TIMELINE;
   readonly topEdgeColors: string[] = XP_TOP_EDGE_COLORS;
+
+  constructor(private meta: Meta) {
+    super();
+    this.initDescriptionMetaTag();
+  }
+
+  private initDescriptionMetaTag() {
+    const currentOrganization = this.timelineSections[0].pro.organization.name;
+    const currentJob = this.timelineSections[0].pro.title;
+
+    this.meta.addTag({
+      name: 'description',
+      content: `Currently working at ${currentOrganization} as ${currentJob}`,
+    });
+  }
 }

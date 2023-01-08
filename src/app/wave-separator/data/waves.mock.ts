@@ -1,10 +1,10 @@
 import { SECOND_BACKGROUND_COLOR } from '../../shared/data/shared.constants';
 
-export interface WaveBackgrounds {
+export interface WaveBackground {
   backgroundColor: string;
 }
 
-export const HOME_WAVES: WaveBackgrounds[] = [
+export const HOME_WAVES: WaveBackground[] = [
   {
     backgroundColor: '#fcaf3c',
   },
@@ -22,7 +22,7 @@ export const HOME_WAVES: WaveBackgrounds[] = [
   },
 ];
 
-export const SECOND_WAVES: WaveBackgrounds[] = [
+export const SECOND_WAVES: WaveBackground[] = [
   {
     backgroundColor: '#fcaf3c',
   },
