@@ -5,7 +5,7 @@ import { XpComponent } from './xp/xp.component';
 import {
   HOME_WAVES,
   SECOND_WAVES,
-  WaveBackgrounds,
+  WaveBackground,
 } from './wave-separator/data/waves.mock';
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import {
@@ -38,7 +38,7 @@ import {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  firstColors: WaveBackgrounds[] = HOME_WAVES;
+  firstColors: WaveBackground[] = HOME_WAVES;
   secondColors = SECOND_WAVES;
   homeBackgroundColor: string = HOME_BACKGROUND_COLOR;
   secondBackgroundColor: string = SECOND_BACKGROUND_COLOR;

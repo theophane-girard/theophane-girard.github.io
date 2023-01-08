@@ -12,9 +12,18 @@ cv-progress-line {
 }
 
 .progress-line-section {
-  margin: global.$progress-line-width*0.125 0px;
+  margin: 10vh 0;
 }
 
 .odd-flip {
   transform: scaleX(-1);
+}
+
+@media (max-width: 750px) {
+  #xp-section {
+    font-size: 15px;
+  }
+  .progress-line-section {
+    margin: 3vh 0;
+  }
 }

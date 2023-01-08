@@ -15,6 +15,7 @@ div {
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 html {
@@ -40,7 +41,6 @@ section {
   section {
     min-height: 10em;
     width: 100vw;
-    min-width: 30em;
   }
 }
 

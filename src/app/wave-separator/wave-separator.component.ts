@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, debounceTime, fromEvent, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { WaveBackgrounds } from './data/waves.mock';
+import { WaveBackground } from './data/waves.mock';
 import { SectionComponent } from '../shared/ui/section.component';
 
 @Component({
@@ -39,9 +39,9 @@ export class WaveSeparatorComponent extends SectionComponent {
     debounceTime(100),
     tap(() => this.isScrolling$.next(false))
   );
-  waves: WaveBackgrounds[];
+  waves: WaveBackground[];
 
-  @Input() set colors(waves: WaveBackgrounds[]) {
+  @Input() set colors(waves: WaveBackground[]) {
     this.waves = waves;
   }
 }
