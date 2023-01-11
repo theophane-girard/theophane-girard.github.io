@@ -1,33 +1,24 @@
 import { TimelineSection } from './timeline.model';
+import { SKILLS } from './skills.mock';
 
 export const TIMELINE: TimelineSection[] = [
   {
     duration: '2022 - 2023',
     pro: {
       title: 'Fullstack developer',
-      description:
-        'Fullstack developer at Sogeti - part of Capgemini. I built apps which display, calculate and process complex data.',
+      description: `Fullstack developer at <strong>Sogeti - part of Capgemini</strong>. I built apps for Airbus to carry out tests on aircraft on the ground.
+      <br><br>Concretely I worked on web pages which display, calculate and process complex data.`,
       organization: {
         name: 'Sogeti - Capgemini',
         logo: { url: 'sogeti.svg', isBackgroundColorWhite: true },
         url: 'https://sogeti.com',
       },
       skills: [
-        {
-          name: 'Angular',
-          logo: { url: 'ng.svg' },
-        },
-        {
-          name: 'NodeJs',
-          logo: { url: 'node.svg' },
-        },
-        {
-          name: 'TypeOrm',
-        },
-        {
-          name: 'Postgres',
-          logo: { url: 'pgsql.svg' },
-        },
+        SKILLS.ng,
+        SKILLS.nodejs,
+        SKILLS.typeorm,
+        SKILLS.pgsql,
+        SKILLS.scrum,
       ],
     },
     education: undefined,
@@ -37,26 +28,13 @@ export const TIMELINE: TimelineSection[] = [
     pro: {
       title: 'Web developer',
       description:
-        'Fullstack developer (Angular & Php) at NSI - ADMR. I built app to manage schedules, display data and process data from complex forms.',
+        'Fullstack developer at <strong>NSI - ADMR</strong>. I built app to manage schedules, display data and process data from complex forms.',
       organization: {
         name: 'NSI - ADMR',
         logo: { url: 'admr.svg', isBackgroundColorWhite: true },
         url: 'https://admr.org',
       },
-      skills: [
-        {
-          name: 'Angular',
-          logo: { url: 'ng.svg' },
-        },
-        {
-          name: 'Php',
-          logo: { url: 'php.svg' },
-        },
-        {
-          name: 'MySQL',
-          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
-        },
-      ],
+      skills: [SKILLS.ng, SKILLS.php, SKILLS.mysql, SKILLS.scrum],
     },
     education: undefined,
   },
@@ -69,26 +47,8 @@ export const TIMELINE: TimelineSection[] = [
         logo: { url: 'cgi.svg', isBackgroundColorWhite: true },
         url: 'https://www.cgi.fr',
       },
-      description:
-        "Au sein de CGI, j'ai eu le rôle d'Agent support et d'Analyste Développeur. Mes missions consistaient à faire évoluer des applications Php et AngularJS ainsi que d'assurer le support de ces outils.",
-      skills: [
-        {
-          name: 'AngularJS',
-          logo: { url: 'ngjs.svg', isBackgroundColorWhite: true },
-        },
-        {
-          name: 'Php',
-          logo: { url: 'php.svg' },
-        },
-        {
-          name: 'MySQL',
-          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
-        },
-        {
-          name: 'PostgreSQL',
-          logo: { url: 'pgsql.svg' },
-        },
-      ],
+      description: `Within <strong>CGI</strong>, I worked as a technical support agent and web developer. My job was to develop new features of web apps which displays complex data as tables and charts,`,
+      skills: [SKILLS.angularjs, SKILLS.php, SKILLS.mysql, SKILLS.pgsql],
     },
     education: {
       title: 'Master CPIL',
@@ -99,51 +59,20 @@ export const TIMELINE: TimelineSection[] = [
       },
       description:
         "J'ai réalisé un Master en alternance à l'Institut Poly-Informatique afin d'obtenir un diplôme de Chef de Projets en Ingénierie Logicielle. Cette formation m'a permis de développer des compétences en développement back-end et front-end. Mais aussi en gestion de projets.",
-      skills: [
-        {
-          name: 'AngularJS',
-          logo: { url: 'ngjs.svg' },
-        },
-        {
-          name: 'MySQL',
-          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
-        },
-        {
-          name: 'C#',
-          logo: { url: 'csharp.png' },
-        },
-        {
-          name: 'Angular',
-          logo: { url: 'ng.png' },
-        },
-      ],
+      skills: [SKILLS.angularjs, SKILLS.mysql, SKILLS.csharp, SKILLS.ng],
     },
   },
   {
     duration: '2015 - 2016',
     pro: {
-      title: 'Développeur web',
+      title: 'Web Developer',
       organization: {
         name: "Rectorat de l'académie Toulouse",
         logo: { url: 'rect.svg', isBackgroundColorWhite: true },
         url: 'https://www.ac-toulouse.fr',
       },
-      description:
-        "Au sein du Rectorat, ma mission a été de développer de nouvelles fonctionnalités à l'application Web stockant toutes les informations RH du Rectorat.",
-      skills: [
-        {
-          name: 'Php',
-          logo: { url: 'php.svg' },
-        },
-        {
-          name: 'Symfony',
-          logo: { url: 'symfony.svg' },
-        },
-        {
-          name: 'MySQL',
-          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
-        },
-      ],
+      description: `Within the <strong>Local Education Authority</strong> of Toulouse, my mission was to develop new features to the web application storing its HR information. <br><br>In particular, I was able to develop web pages <strong>presenting forms</strong>, others allowing to <strong>list and edit data in the form of tables</strong>.`,
+      skills: [SKILLS.php, SKILLS.symfony, SKILLS.mysql, SKILLS.scrum],
     },
     education: {
       title: 'Licence APSYO',
@@ -155,30 +84,13 @@ export const TIMELINE: TimelineSection[] = [
       description:
         "Mon année au sein du Rectorat s'est effectuée en alternance avec la formation d'Analyste Programmeur en SYstèmes Ouverts. Elle m'a permis de développer des compétences en développement back-end et front-end.",
       skills: [
-        {
-          name: 'Java',
-          logo: { url: 'java.png' },
-        },
-        {
-          name: 'Git',
-          logo: { url: 'git.png' },
-        },
-        {
-          name: 'Android',
-          logo: { url: 'android.png' },
-        },
-        {
-          name: 'GWT',
-          logo: { url: 'gwt.png' },
-        },
-        {
-          name: 'MySQL',
-          logo: { url: 'mysql.svg', isBackgroundColorWhite: true },
-        },
-        {
-          name: 'C#',
-          logo: { url: 'csharp.png' },
-        },
+        SKILLS.mysql,
+        SKILLS.symfony,
+        SKILLS.java,
+        SKILLS.git,
+        SKILLS.android,
+        SKILLS.gwt,
+        SKILLS.csharp,
       ],
     },
   },

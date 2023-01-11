@@ -10,5 +10,10 @@ describe('EmPipe', () => {
     expect(pipe.transform(Number(null))).toEqual('auto');
     expect(pipe.transform(Number(undefined))).toEqual('auto');
     expect(pipe.transform(Number(0))).toEqual('auto');
+    expect(pipe.transform(0)).toEqual('auto');
+    expect(pipe.transform(Number(false), 4)).toEqual('4em');
+    expect(pipe.transform(Number(null), 4)).toEqual('4em');
+    expect(pipe.transform(Number(undefined), 4)).toEqual('4em');
+    expect(pipe.transform(Number(0), 4)).toEqual('4em');
   });
 });

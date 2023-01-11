@@ -2,16 +2,13 @@ import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { WaveSeparatorComponent } from './wave-separator/wave-separator.component';
 import { XpComponent } from './xp/xp.component';
-import {
-  HOME_WAVES,
-  SECOND_WAVES,
-  WaveBackground,
-} from './wave-separator/data/waves.mock';
+import { HOME_WAVES, SECOND_WAVES } from './wave-separator/data/waves.mock';
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import {
   HOME_BACKGROUND_COLOR,
   SECOND_BACKGROUND_COLOR,
-} from './shared/data/shared.constants';
+} from '@shared/data/shared.constants';
+import { WaveBackground } from './wave-separator/data/wave.types';
 
 @Component({
   selector: 'cv-root',

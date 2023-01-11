@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SectionComponent } from '../shared/ui/section.component';
+import { SectionComponent } from '@shared/ui/components/section.component';
 import { ScoutingPictureComponent } from './features/scouting-picture/scouting-picture.component';
 import { HobbiesDescriptionComponent } from './features/hobbies-description/hobbies-description.component';
 import { SkyComponent } from './ui/components/sky/sky.component';
-import { ObserveVisibilityDirective } from '../shared/directives/observe-visibility.directive';
+import { ObserveVisibilityDirective } from '@shared/ui/directives/observe-visibility.directive';
 import { Subject } from 'rxjs';
 
 @Component({

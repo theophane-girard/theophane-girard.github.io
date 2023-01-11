@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, debounceTime, fromEvent, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { WaveBackground } from './data/waves.mock';
-import { SectionComponent } from '../shared/ui/section.component';
+import { SectionComponent } from '@shared/ui/components/section.component';
+import { WaveBackground } from './data/wave.types';
 
 @Component({
   selector: 'cv-wave-separator',
