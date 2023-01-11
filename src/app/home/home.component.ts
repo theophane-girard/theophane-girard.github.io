@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SectionComponent } from '../shared/ui/section.component';
+import { SectionComponent } from '@shared/ui/components/section.component';
 import { HomePictureComponent } from './feature/home-picture/home-picture.component';
 import { HomeDescriptionComponent } from './feature/home-description/home-description.component';
 

@@ -3,6 +3,7 @@
 #tent {
   width: global.$tent-width;
   height: global.$tent-height;
+  border-bottom: 1px solid #2c0f0f;
   $left-door-tent-color: #d59857;
   $right-door-tent-color: #af7c46;
   $door-height: 5em;

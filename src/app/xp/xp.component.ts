@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SectionComponent } from '../shared/ui/section.component';
+import { SectionComponent } from '@shared/ui/components/section.component';
 import { TIMELINE } from './data/timeline.mock';
 import { TimelineSection } from './data/timeline.model';
 import { XpSectionComponent } from './ui/components/xp-section/xp-section.component';
 import { ProgressLineComponent } from './ui/components/progress-line/progress-line.component';
-import { XP_TOP_EDGE_COLORS } from '../shared/data/shared.constants';
+import { XP_TOP_EDGE_COLORS } from '@shared/data/shared.constants';
 import { Meta } from '@angular/platform-browser';
 
 @Component({

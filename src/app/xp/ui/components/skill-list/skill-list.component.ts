@@ -1,20 +1,23 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Skill } from '../../../data/timeline.model';
-import { SkillComponent } from '../skill/skill.component';
-import { EmPipe } from '../../../../shared/pipe/em.pipe';
+import { EmPipe } from '@shared/ui/pipe/em.pipe';
+import { LogoComponent } from '@shared/ui/components/logo/logo.component';
+import { SKILL_LOGOS_PATH } from '@shared/data/shared.constants';
 
 @Component({
   selector: 'cv-skill-list',
   standalone: true,
-  imports: [CommonModule, SkillComponent, EmPipe],
+  imports: [CommonModule, EmPipe, LogoComponent],
   template: `
-    <div class="skill display-flex">
-      <cv-skill
-        *ngFor="let skill of skills"
-        [skill]="skill"
-        [width]="logoWidth"
-      ></cv-skill>
+    <div id="skill-list" class="display-flex">
+      <ng-container *ngFor="let skill of skills">
+        <cv-logo
+          *ngIf="skill.logo"
+          [dirPath]="skillLogosPath"
+          [logo]="skill.logo"
+        ></cv-logo>
+      </ng-container>
     </div>
   `,
   styleUrls: ['./skill-list.component.scss'],
@@ -22,5 +25,6 @@ import { EmPipe } from '../../../../shared/pipe/em.pipe';
 })
 export class SkillListComponent {
   @Input() skills: Skill[];
+  skillLogosPath = SKILL_LOGOS_PATH;
   logoWidth: number = 4;
 }

@@ -1,9 +1,11 @@
-export interface Skill {
+import { Logo } from '@shared/data/shared.model';
+
+export type Skill = {
   name: string;
   logo?: Logo;
-}
+};
 
-export interface XpSection {
+export type XpSection = {
   title: string;
   description: string;
   organization: {
@@ -12,15 +14,10 @@ export interface XpSection {
     url: string;
   };
   skills: Skill[];
-}
+};
 
-export interface Logo {
-  url: string;
-  isBackgroundColorWhite?: boolean;
-}
-
-export interface TimelineSection {
+export type TimelineSection = {
   duration: string;
   pro: XpSection;
   education: XpSection | undefined;
-}
+};

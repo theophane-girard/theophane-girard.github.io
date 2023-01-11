@@ -5,10 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class EmPipe implements PipeTransform {
-  transform(value: number): string {
-    if (!value) {
+  transform(value: number | undefined, defaultValue?: number): string {
+    if (value) {
+      return value + 'em';
+    }
+    if (!defaultValue) {
       return 'auto';
     }
-    return value + 'em';
+    return defaultValue + 'em';
   }
 }

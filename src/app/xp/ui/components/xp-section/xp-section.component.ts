@@ -2,12 +2,11 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TimelineSection } from '../../../data/timeline.model';
 import { CurrentDurationPipe } from '../../pipes/current-duration.pipe';
-import { ObserveVisibilityDirective } from '../../../../shared/directives/observe-visibility.directive';
-import { ORGANIZATION_LOGOS_PATH } from '../../../../shared/data/shared.constants';
-import { SkillComponent } from '../skill/skill.component';
+import { ObserveVisibilityDirective } from '@shared/ui/directives/observe-visibility.directive';
+import { ORGANIZATION_LOGOS_PATH } from '@shared/data/shared.constants';
 import { SkillListComponent } from '../skill-list/skill-list.component';
 import { BehaviorSubject } from 'rxjs';
-import { SkillTagComponent } from '../skill-tag/skill-tag.component';
+import { TagComponent } from '@shared/ui/components/tag/tag.component';
 
 @Component({
   selector: 'cv-xp-section',
@@ -16,9 +15,8 @@ import { SkillTagComponent } from '../skill-tag/skill-tag.component';
     CommonModule,
     CurrentDurationPipe,
     ObserveVisibilityDirective,
-    SkillComponent,
     SkillListComponent,
-    SkillTagComponent,
+    TagComponent,
   ],
   template: `
     <div
@@ -49,16 +47,14 @@ import { SkillTagComponent } from '../skill-tag/skill-tag.component';
         <h2 class="">{{ timelineSection.pro.title }}</h2>
       </div>
       <div id="skill-tag-list">
-        <cv-skill-tag
+        <cv-tag
           *ngFor="let skill of timelineSection.pro.skills"
           [backgroundColor]="topEdgeColor"
           [label]="skill.name"
           [textColor]="'white'"
-        ></cv-skill-tag>
+        ></cv-tag>
       </div>
-      <p class="description">
-        {{ timelineSection.pro.description }}
-      </p>
+      <p class="description" [innerHTML]="timelineSection.pro.description"></p>
       <cv-skill-list [skills]="timelineSection.pro.skills"></cv-skill-list>
     </div>
   `,

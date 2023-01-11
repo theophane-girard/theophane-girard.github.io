@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'cv-skill-tag',
+  selector: 'cv-tag',
   standalone: true,
   imports: [CommonModule],
   template: `
@@ -14,10 +14,10 @@ import { CommonModule } from '@angular/common';
       >
     </a>
   `,
-  styleUrls: ['./skill-tag.component.scss'],
+  styleUrls: ['./tag.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SkillTagComponent {
+export class TagComponent {
   @Input() label: string;
   @Input() link: string;
   @Input() backgroundColor: string;

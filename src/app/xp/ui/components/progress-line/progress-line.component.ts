@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ObserveVisibilityDirective } from '../../../../shared/directives/observe-visibility.directive';
+import { ObserveVisibilityDirective } from '@shared/ui/directives/observe-visibility.directive';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
