@@ -3,3 +3,9 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@media (max-width: 450px) {
+  #skill-list {
+    font-size: 10px;
+  }
+}
