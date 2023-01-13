@@ -3,27 +3,27 @@ import { Tag } from '@shared/data/shared.model';
 export const TAGS: Tag[] = [
   {
     label: 'Angular',
-    backgroundColor: '#DD0031',
+    backgroundColor: '#fcaf3c',
     textColor: 'white',
   },
   {
     label: 'NgRx',
-    backgroundColor: '#ba2bd2',
+    backgroundColor: '#ff8a80',
     textColor: 'white',
   },
   {
     label: 'Ngxs',
-    backgroundColor: 'white',
-    textColor: '#1d00ff',
+    backgroundColor: '#ff86c7',
+    textColor: 'white',
   },
   {
     label: 'NodeJs',
-    backgroundColor: '#65b849',
+    backgroundColor: '#b99bf4',
     textColor: 'white',
   },
   {
     label: 'SCRUM',
-    backgroundColor: '#189ab6',
+    backgroundColor: '#3f8cff',
     textColor: 'white',
   },
 ];

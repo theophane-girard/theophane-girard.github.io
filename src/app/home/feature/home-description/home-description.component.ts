@@ -8,12 +8,12 @@ import { TAGS } from '../../data/tags.mock';
   standalone: true,
   imports: [CommonModule, TagComponent],
   template: `
-    <div class="display-flex">
+    <div id="title-container" class="display-flex">
       <div>
         <h1 id="name">Théophane Girard</h1>
       </div>
       <div id="logo-container" class="display-flex">
-        <img id="logo" src="assets/logo.png" alt="logo" />
+        <!-- TODO: insert logo here -->
       </div>
     </div>
     <br />
@@ -27,7 +27,7 @@ import { TAGS } from '../../data/tags.mock';
     </div>
     <br />
     <i>Working on angular projects as developer since 2018</i>
-    <div class="display-flex">
+    <div id="contact-container" class="display-flex">
       <a
         href="mailto:theophane.girard@pm.me"
         class="contact-logo margin-1em display-flex justify-content-center align-items-center"

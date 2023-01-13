@@ -75,3 +75,18 @@
     transform: translateX(0em);
   }
 }
+
+@media (max-width: 768px) {
+  #title-container {
+    display: block;
+  }
+
+  #contact-container {
+    justify-content: space-evenly;
+    display: flex;
+  }
+
+  .margin-1em {
+    margin: 1em 0;
+  }
+}
