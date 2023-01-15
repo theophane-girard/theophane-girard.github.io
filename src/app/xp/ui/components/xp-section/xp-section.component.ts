@@ -7,6 +7,7 @@ import { ORGANIZATION_LOGOS_PATH } from '@shared/data/shared.constants';
 import { SkillListComponent } from '../skill-list/skill-list.component';
 import { BehaviorSubject } from 'rxjs';
 import { TagComponent } from '@shared/ui/components/tag/tag.component';
+import { FlexDirective } from '@shared/ui/directives/flex.directive';
 
 @Component({
   selector: 'cv-xp-section',
@@ -17,11 +18,12 @@ import { TagComponent } from '@shared/ui/components/tag/tag.component';
     ObserveVisibilityDirective,
     SkillListComponent,
     TagComponent,
+    FlexDirective,
   ],
   template: `
     <div
       id="container"
-      class="display-flex"
+      flex
       observeVisibility
       (visible)="visible$.next(true)"
       [ngClass]="{ hidden: !isFirst, visible: isFirst || (visible$ | async) }"

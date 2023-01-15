@@ -67,7 +67,6 @@ $cactus-shade: #84a841;
   .thorn {
     width: 0;
     height: 0;
-    position: absolute;
     z-index: 300;
     content: "";
     border-bottom: global.$jar-width*0.25 solid #92b64c;

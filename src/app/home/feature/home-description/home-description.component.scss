@@ -1,23 +1,3 @@
-.contact-logo {
-  animation: contact-logo 1s ease-in-out;
-}
-
-#mail-logo-container {
-  background: #d1d1d1;
-  border-radius: 50%;
-  width: 3.5em;
-  height: 3.5em;
-
-  &:hover {
-    opacity: 0.7;
-    transition: 0.2s ease-in-out;
-  }
-
-  #mail-logo {
-    width: 1.6em;
-  }
-}
-
 #name {
   margin-bottom: 0;
 }
@@ -31,62 +11,8 @@
   }
 }
 
-// fa = font-awesome
-.fa {
-  padding: 0.5em;
-  font-size: 30px;
-  width: 1em;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
-}
-
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.fa-github {
-  background: whitesmoke;
-  color: black;
-}
-
-.fa-at {
-  background: whitesmoke;
-  color: black;
-}
-
-.fa:hover {
-  opacity: 0.7;
-  transition: 0.2s ease-in-out;
-}
-
-.margin-1em {
-  margin: 1em 1em 1em 0;
-}
-
-@keyframes contact-logo {
-  0% {
-    opacity: 0;
-    transform: translateX(-1em);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0em);
-  }
-}
-
 @media (max-width: 768px) {
   #title-container {
-    display: block;
-  }
-
-  #contact-container {
-    justify-content: space-evenly;
-    display: flex;
-  }
-
-  .margin-1em {
-    margin: 1em 0;
+    display: block !important;
   }
 }

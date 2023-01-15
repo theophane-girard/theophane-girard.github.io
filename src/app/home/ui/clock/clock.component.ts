@@ -3,20 +3,22 @@ import { BehaviorSubject, interval, Observable } from 'rxjs';
 import { map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Hands } from './clock.types';
 import { CommonModule } from '@angular/common';
+import { AbsoluteDirective } from '@shared/ui/directives/absolute.directive';
 
 @Component({
   selector: 'cv-clock',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AbsoluteDirective],
   template: `
-    <article id="clock" class="position-absolute">
-      <div class="position-absolute" id="hand-axis"></div>
+    <article id="clock" absolute>
+      <div absolute id="hand-axis"></div>
       <embed id="notches" src="assets/others/clock.svg" />
       <div class="hours-container">
         <div
           id="hours"
           [style.webkitTransform]="hoursMove$ | async"
           [style.transform]="hoursMove$ | async"
+          absolute
         ></div>
       </div>
       <div class="minutes-container">
@@ -24,6 +26,7 @@ import { CommonModule } from '@angular/common';
           id="minutes"
           [style.webkitTransform]="minutesMove$ | async"
           [style.transform]="minutesMove$ | async"
+          absolute
         ></div>
       </div>
       <div class="seconds-container">
@@ -31,6 +34,7 @@ import { CommonModule } from '@angular/common';
           id="seconds"
           [style.webkitTransform]="secondsMove$ | async"
           [style.transform]="secondsMove$ | async"
+          absolute
         ></div>
       </div>
     </article>

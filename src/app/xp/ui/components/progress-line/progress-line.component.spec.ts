@@ -12,13 +12,28 @@ describe('ProgressLineComponent', () => {
   });
 
   it('should be hidden', () => {
-    expect(spectator.query('.animation-running')).toBeFalsy();
+    expect(
+      spectator.query('[style*="animation-play-state: paused"]')
+    ).toBeTruthy();
+    expect(
+      spectator.query('[style*="animation-play-state: running"]')
+    ).toBeFalsy();
   });
 
   it('should be hidden at first render and should be visible when visible$ emit value', () => {
-    expect(spectator.query('.animation-running')).toBeFalsy();
+    expect(
+      spectator.query('[style*="animation-play-state: paused"]')
+    ).toBeTruthy();
+    expect(
+      spectator.query('[style*="animation-play-state: running"]')
+    ).toBeFalsy();
     spectator.component.visible$.next(true);
     spectator.detectComponentChanges();
-    expect(spectator.query('.animation-running')).toBeTruthy();
+    expect(
+      spectator.query('[style*="animation-play-state: running"]')
+    ).toBeTruthy();
+    expect(
+      spectator.query('[style*="animation-play-state: paused"]')
+    ).toBeFalsy();
   });
 });

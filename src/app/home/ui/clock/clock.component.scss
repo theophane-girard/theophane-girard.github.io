@@ -32,7 +32,6 @@ $hours-height: $clock-width*0.25;
 #hours {
   width: $minutes-width;
   height: $hours-height;
-  position: absolute;
   top: $hours-height;
   left: global.centerElementFromParent($clock-width, $minutes-width);
   background: $hand-color;
@@ -43,7 +42,6 @@ $hours-height: $clock-width*0.25;
 #minutes {
   width: $minutes-width;
   height: $minutes-height;
-  position: absolute;
   top: $minutes-height*0.5;
   left: global.centerElementFromParent($clock-width, $minutes-width);
   background: $hand-color;
@@ -55,7 +53,6 @@ $hours-height: $clock-width*0.25;
 #seconds {
   width: $seconds-width;
   height: $seconds-height;
-  position: absolute;
   top: $seconds-height*0.5;
   left: global.centerElementFromParent($clock-width, $seconds-width);
   background: $hand-color;

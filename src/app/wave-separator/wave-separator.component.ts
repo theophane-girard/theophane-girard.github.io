@@ -4,11 +4,12 @@ import { BehaviorSubject, debounceTime, fromEvent, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { SectionComponent } from '@shared/ui/components/section.component';
 import { WaveBackground } from './data/wave.types';
+import { AnimationStateDirective } from '@shared/ui/directives/animation-state.directive';
 
 @Component({
   selector: 'cv-wave-separator',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AnimationStateDirective],
   template: `
     <ng-container *ngIf="scroll$ | async"></ng-container>
     <svg viewBox="0 300 900 300">
@@ -23,9 +24,8 @@ import { WaveBackground } from './data/wave.types';
         *ngFor="let wave of waves; let i = index"
         [attr.id]="'wave' + i"
         [attr.fill]="wave.backgroundColor"
-        [ngClass]="{
-          'animation-running': (isScrolling$ | async)
-        }"
+        animationState
+        [isRunning]="isScrolling$ | async"
       ></path>
     </svg>
   `,

@@ -5,7 +5,6 @@ $big-fire-width: 4em;
 $animation-time: 1.5s;
 
 .wood {
-  position: absolute;
   width: 1em;
   height: 10em;
   transform-origin: center;
@@ -30,7 +29,6 @@ $animation-time: 1.5s;
 }
 
 .flames {
-  position: absolute;
   transform: rotate(225deg);
   width: $container-width * 0.5;
   height: $container-width * 0.5;
@@ -39,7 +37,6 @@ $animation-time: 1.5s;
 }
 
 .fire {
-  position: absolute;
   border-radius: 1em;
 
   &:nth-child(2n + 1) {
@@ -65,10 +62,6 @@ $animation-time: 1.5s;
   &:nth-child(4) {
     animation-delay: $animation-time*0.25 * 3;
   }
-}
-
-#big-fire {
-  // animation: flameAnimation 1.5s linear infinite;
 }
 
 @keyframes oddFlameAnimation {

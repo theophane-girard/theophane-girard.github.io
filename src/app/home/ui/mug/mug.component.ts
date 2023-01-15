@@ -1,27 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AbsoluteDirective } from '@shared/ui/directives/absolute.directive';
 
 @Component({
   selector: 'cv-mug',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AbsoluteDirective],
   template: `
     <div
       *ngFor="let steam of steams; let i = index"
-      class="position-absolute steam"
+      class="steam"
       id="steam-{{ i + 1 }}"
+      absolute
     ></div>
-    <div class="position-absolute" id="mug">
-      <div class="position-absolute" id="mug-shadow"></div>
+    <div id="mug" absolute>
+      <div id="mug-shadow" absolute></div>
     </div>
-    <div class="position-absolute" id="mug-handle"></div>
+    <div id="mug-handle" absolute></div>
   `,
   styleUrls: ['./mug.component.scss'],
 })
-export class MugComponent implements OnInit {
+export class MugComponent {
   steams = new Array(8);
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
