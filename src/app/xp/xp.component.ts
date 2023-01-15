@@ -7,18 +7,24 @@ import { XpSectionComponent } from './ui/components/xp-section/xp-section.compon
 import { ProgressLineComponent } from './ui/components/progress-line/progress-line.component';
 import { XP_TOP_EDGE_COLORS } from '@shared/data/shared.constants';
 import { Meta } from '@angular/platform-browser';
+import { FlexDirective } from '@shared/ui/directives/flex.directive';
 
 @Component({
   selector: 'cv-xp',
   standalone: true,
-  imports: [CommonModule, XpSectionComponent, ProgressLineComponent],
+  imports: [
+    CommonModule,
+    XpSectionComponent,
+    ProgressLineComponent,
+    FlexDirective,
+  ],
   template: `
     <section [style.background]="backgroundColor">
       <div class="section-container">
         <h1>My Experiences</h1>
         <div
           id="timeline-container"
-          class="display-flex"
+          flex
           *ngFor="
             let timelineSection of timelineSections;
             let first = first;
@@ -27,7 +33,7 @@ import { Meta } from '@angular/platform-browser';
           "
         >
           <div
-            class="display-flex"
+            flex
             id="xp-section"
             [ngClass]="{ 'justify-content-end': index % 2 }"
           >
@@ -44,7 +50,7 @@ import { Meta } from '@angular/platform-browser';
             <cv-progress-line
               [backgroundColor]="backgroundColor"
               *ngIf="!last"
-              class="display-flex"
+              flex
             ></cv-progress-line>
           </div>
         </div>

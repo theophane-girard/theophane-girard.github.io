@@ -13,7 +13,6 @@ section {
 }
 
 #circle-background {
-  position: absolute;
   top: global.$circle-background-top;
   left: global.centerElementFromParent(global.$container-width, global.$circle-background-width);
   text-align: center;
@@ -27,7 +26,6 @@ section {
   width: global.$desktop-width;
   height: global.$desktop-height;
   background-color: black;
-  position: absolute;
   top: global.$desktop-top;
   left: global.centerElementFromParent(global.$container-width, global.$desktop-width);
   border-radius: 1.66em;

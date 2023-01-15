@@ -6,6 +6,8 @@ import { HobbiesDescriptionComponent } from './features/hobbies-description/hobb
 import { SkyComponent } from './ui/components/sky/sky.component';
 import { ObserveVisibilityDirective } from '@shared/ui/directives/observe-visibility.directive';
 import { Subject } from 'rxjs';
+import { RelativeDirective } from '@shared/ui/directives/relative.directive';
+import { FlexDirective } from '@shared/ui/directives/flex.directive';
 
 @Component({
   selector: 'cv-hobbies',
@@ -16,18 +18,20 @@ import { Subject } from 'rxjs';
     HobbiesDescriptionComponent,
     SkyComponent,
     ObserveVisibilityDirective,
+    RelativeDirective,
+    FlexDirective,
   ],
   template: `
     <section
       [style.background]="backgroundColor"
-      class="position-relative"
+      relative
       observeVisibility
       [threshold]="0"
-      [debounceTime]="200"
+      [debounceTime]="300"
       (visible)="visible$.next(true)"
     >
       <cv-sky></cv-sky>
-      <div class="section-container display-flex">
+      <div class="section-container" flex>
         <cv-hobbies-description
           [ngClass]="{ visible: visible$ | async }"
           class="hidden initial-y"

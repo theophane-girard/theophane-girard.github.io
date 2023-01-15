@@ -1,14 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @use './src/assets/global';
 
-.position-absolute {
-  position: absolute;
-}
-
-.position-relative {
-  position: relative;
-}
-
 div {
   margin: 0;
 }
@@ -49,22 +41,6 @@ section {
   margin: auto;
   width: global.$section-width;
   justify-content: space-around;
-}
-
-@media (max-width: 768px) {
-
-}
-
-.animation-paused {
-  animation-play-state: paused !important;
-}
-
-.animation-running {
-  animation-play-state: running !important;
-}
-
-.display-flex {
-  display: flex;
 }
 
 .margin-1em {

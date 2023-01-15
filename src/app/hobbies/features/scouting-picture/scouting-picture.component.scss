@@ -12,7 +12,6 @@
   }
 
   #grass-1 {
-    //top: global.$hobbies-section-height / 2 + (global.$tent-height / 2) - global.$grass-height;
     top: global.$hobbies-section-height * 0.5 + (global.$tent-height) - global.$grass-height;
     left: $scouting-picture-width;
   }
@@ -25,7 +24,6 @@
   #grass-3 {
     top: global.$hobbies-section-height * 0.5 + (global.$tent-height * 0.5) - global.$grass-height;
     left: $scouting-picture-width * 0.3;
-    //left: $scouting-picture-width + global.$door-width * 1.5;
   }
 
   cv-tent {

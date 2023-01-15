@@ -6,7 +6,6 @@ $chevron-width: 0.33em;
 
 #laptop {
   z-index: 9;
-  position: absolute;
   width: global.$laptop-width;
   height: global.$laptop-height;
   top: global.$desktop-top - (global.$tilt-height + global.$laptop-kb-height + global.$desktop-height + (global.$laptop-top-edge-top* 2));
@@ -17,7 +16,6 @@ $chevron-width: 0.33em;
     width: global.$laptop-width;
     height: global.$laptop-height;
     background-color: rgb(212, 211, 211);
-    position: absolute;
     border-radius: global.$laptop-border-radius;
   }
 
@@ -25,7 +23,6 @@ $chevron-width: 0.33em;
     width: global.$laptop-width;
     height: global.$laptop-top-edge-height;
     background-color: global.$laptop-kb-background;
-    position: absolute;
     top: global.$laptop-top-edge-top;
     border-radius: global.$laptop-border-radius;
     animation: top-edge-animation 4s ease 0s infinite alternate;
@@ -35,7 +32,6 @@ $chevron-width: 0.33em;
     width: global.$laptop-width;
     height: global.$laptop-kb-height;
     background-color: global.$laptop-kb-background;
-    position: absolute;
     top: global.$laptop-height;
     box-shadow: 0 -0.03em 0.03em 0 #303030;
   }
@@ -43,7 +39,6 @@ $chevron-width: 0.33em;
   #html-logo {
     #chevron-right {
       box-sizing: border-box;
-      position: absolute;
       top: global.centerElementFromParent(global.$laptop-height, global.$logo-width);
       left: global.centerElementFromParent(global.$laptop-width, global.$logo-width) +
         math.div(global.$slash-width, 1.5);
@@ -80,7 +75,6 @@ $chevron-width: 0.33em;
     }
 
     #chevron-left {
-      position: absolute;
       display: block;
       width: 0.73em;
       height: 0.73em;
@@ -123,7 +117,6 @@ $chevron-width: 0.33em;
       transform: rotate(-70deg);
       height: global.$slash-height;
       background: black;
-      position: absolute;
       border-radius: 3.33em;
       top: global.centerElementFromParent(global.$laptop-height, global.$slash-height);
       left: global.centerElementFromParent(global.$laptop-width, global.$slash-width);

@@ -1,15 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RelativeDirective } from '@shared/ui/directives/relative.directive';
+import { AbsoluteDirective } from '@shared/ui/directives/absolute.directive';
 
 @Component({
   selector: 'cv-grass',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RelativeDirective, AbsoluteDirective],
   template: `
-    <div id="container" class="position-relative">
-      <div class="neutral-grass-blade position-absolute"></div>
-      <div class="light-grass-blade position-absolute"></div>
-      <div class="dark-grass-blade position-absolute"></div>
+    <div id="container" relative>
+      <div class="neutral-grass-blade" absolute></div>
+      <div class="light-grass-blade" absolute></div>
+      <div class="dark-grass-blade" absolute></div>
     </div>
   `,
   styleUrls: ['./grass.component.scss'],
