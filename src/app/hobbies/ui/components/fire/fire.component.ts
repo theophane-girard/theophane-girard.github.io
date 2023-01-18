@@ -10,10 +10,7 @@ import { RelativeDirective } from '@shared/ui/directives/relative.directive';
   template: `
     <div id="fire-container" relative>
       <div class="flames" absolute>
-        <div class="fire" absolute></div>
-        <div class="fire" absolute></div>
-        <div class="fire" absolute></div>
-        <div class="fire" absolute></div>
+        <div *ngFor="let fire of fires" class="fire" absolute></div>
       </div>
       <div id="wood1" class="wood" absolute></div>
       <div id="wood2" class="wood" absolute></div>
@@ -22,4 +19,6 @@ import { RelativeDirective } from '@shared/ui/directives/relative.directive';
   styleUrls: ['./fire.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FireComponent {}
+export class FireComponent {
+  fires = new Array(4);
+}

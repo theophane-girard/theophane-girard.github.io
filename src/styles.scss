@@ -67,12 +67,6 @@ section {
   align-items: center;
 }
 
-@for $i from 0 through 5 {
-  .z-index-#{$i} {
-    z-index: $i;
-  }
-}
-
 .bottom-0 {
   bottom: 0;
 }

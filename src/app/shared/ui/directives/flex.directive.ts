@@ -7,6 +7,4 @@ import { Directive } from '@angular/core';
     '[style.display]': '"flex"',
   },
 })
-export class FlexDirective {
-  constructor() {}
-}
+export class FlexDirective {}

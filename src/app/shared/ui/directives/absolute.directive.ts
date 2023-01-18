@@ -7,6 +7,4 @@ import { Directive } from '@angular/core';
     '[style.position]': '"absolute"',
   },
 })
-export class AbsoluteDirective {
-  constructor() {}
-}
+export class AbsoluteDirective {}

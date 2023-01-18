@@ -17,6 +17,7 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
           *ngIf="skill.logo"
           [dirPath]="skillLogosPath"
           [logo]="skill.logo"
+          [defaultWidth]="4"
         ></cv-logo>
       </ng-container>
     </div>
