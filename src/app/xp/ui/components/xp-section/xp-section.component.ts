@@ -8,6 +8,9 @@ import { SkillListComponent } from '../skill-list/skill-list.component';
 import { BehaviorSubject } from 'rxjs';
 import { TagComponent } from '@shared/ui/components/tag/tag.component';
 import { FlexDirective } from '@shared/ui/directives/flex.directive';
+import { CardComponent } from '@shared/ui/components/card/card.component';
+import { LogoComponent } from '@shared/ui/components/logo/logo.component';
+import { EmPipe } from '@shared/ui/pipe/em.pipe';
 
 @Component({
   selector: 'cv-xp-section',
@@ -19,46 +22,47 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
     SkillListComponent,
     TagComponent,
     FlexDirective,
+    CardComponent,
+    LogoComponent,
+    EmPipe,
   ],
   template: `
-    <div
+    <cv-card
       id="container"
-      flex
       observeVisibility
       (visible)="visible$.next(true)"
       [ngClass]="{ hidden: !isFirst, visible: isFirst || (visible$ | async) }"
-      [style.border-top-color]="topEdgeColor"
+      [title]="timelineSection.pro.title"
+      [topEdgeColor]="topEdgeColor"
+      [maxWidth]="'40vw'"
     >
-      <div>
-        <a href="{{ timelineSection.pro.organization.url }}" target="_blank">
-          <img
-            class="organization-logo"
-            src="{{
-              organizationLogoRoot + timelineSection.pro.organization.logo.url
-            }}"
-            alt="{{ timelineSection.pro.organization.name }}"
-          />
-        </a>
-      </div>
-      <div>
+      <ng-template #logoTemplate>
+        <cv-logo
+          [logo]="timelineSection.pro.organization.logo"
+          [dirPath]="organizationLogoRoot"
+          [name]="timelineSection.pro.organization.name"
+        ></cv-logo>
+      </ng-template>
+      <ng-template #logoSubtitleTemplate>
         <p>
           {{ timelineSection.duration | currentDuration : isFirst }}
         </p>
-      </div>
-      <div>
-        <h2 class="">{{ timelineSection.pro.title }}</h2>
-      </div>
-      <div id="skill-tag-list">
-        <cv-tag
-          *ngFor="let skill of timelineSection.pro.skills"
-          [backgroundColor]="topEdgeColor"
-          [label]="skill.name"
-          [textColor]="'white'"
-        ></cv-tag>
-      </div>
-      <p class="description" [innerHTML]="timelineSection.pro.description"></p>
-      <cv-skill-list [skills]="timelineSection.pro.skills"></cv-skill-list>
-    </div>
+      </ng-template>
+      <ng-template #subtitleTemplate>
+        <div id="skill-tag-list">
+          <cv-tag
+            *ngFor="let skill of timelineSection.pro.skills"
+            [backgroundColor]="topEdgeColor"
+            [label]="skill.name"
+            [textColor]="'white'"
+          ></cv-tag>
+        </div>
+      </ng-template>
+      <p [innerHTML]="timelineSection.pro.description"></p>
+      <ng-template #footerTemplate>
+        <cv-skill-list [skills]="timelineSection.pro.skills"></cv-skill-list>
+      </ng-template>
+    </cv-card>
   `,
   styleUrls: ['./xp-section.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

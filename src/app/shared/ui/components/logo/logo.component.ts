@@ -8,12 +8,17 @@ import { Logo } from '@shared/data/shared.model';
   standalone: true,
   imports: [CommonModule, EmPipe, NgOptimizedImage],
   template: `
-    <img
-      class="logo"
-      [attr.src]="dirPath + logo.url"
-      alt="{{ name }}"
-      [ngStyle]="{ width: logo.width | em : 4, height: logo.height | em : 4 }"
-    />
+    <a [attr.href]="url" [attr.target]="urlTarget">
+      <img
+        class="logo"
+        [attr.src]="dirPath + logo.url"
+        alt="{{ name }}"
+        [ngStyle]="{
+          width: logo.width | em : defaultWidth,
+          height: logo.height | em : defaultHeight
+        }"
+      />
+    </a>
   `,
   styleUrls: ['./logo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,4 +27,8 @@ export class LogoComponent {
   @Input() logo: Logo;
   @Input() name: string;
   @Input() dirPath: string;
+  @Input() url: string;
+  @Input() urlTarget: string = '_blank';
+  @Input() defaultWidth: number;
+  @Input() defaultHeight: number;
 }
