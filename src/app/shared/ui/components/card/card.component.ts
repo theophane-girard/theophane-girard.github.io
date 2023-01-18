@@ -66,10 +66,11 @@ export class CardComponent {
   @Input() backgroundColor: string = 'white';
   @Input() color: string = 'black';
   @Input() maxWidth: string;
-  @ContentChild('logoTemplate') logoTemplate: TemplateRef<any>;
-  @ContentChild('logoSubtitleTemplate') logoSubtitleTemplate: TemplateRef<any>;
-  @ContentChild('titleTemplate') titleTemplate: TemplateRef<any>;
-  @ContentChild('subtitleTemplate') subtitleTemplate: TemplateRef<any>;
-  @ContentChild('contentTemplate') contentTemplate: TemplateRef<any>;
-  @ContentChild('footerTemplate') footerTemplate: TemplateRef<any>;
+  @ContentChild('logoTemplate') logoTemplate: TemplateRef<string>;
+  @ContentChild('logoSubtitleTemplate')
+  logoSubtitleTemplate: TemplateRef<string>;
+  @ContentChild('titleTemplate') titleTemplate: TemplateRef<string>;
+  @ContentChild('subtitleTemplate') subtitleTemplate: TemplateRef<string>;
+  @ContentChild('contentTemplate') contentTemplate: TemplateRef<string>;
+  @ContentChild('footerTemplate') footerTemplate: TemplateRef<string>;
 }
