@@ -30,16 +30,16 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
       [debounceTime]="300"
       (visible)="visible$.next(true)"
     >
-      <cv-sky></cv-sky>
+      <cv-sky/>
       <div class="section-container" flex>
         <cv-hobbies-description
           [ngClass]="{ visible: visible$ | async }"
           class="hidden initial-y"
-        ></cv-hobbies-description>
+        />
         <cv-scouting-picture
           [ngClass]="{ visible: visible$ | async }"
           class="initial-y"
-        ></cv-scouting-picture>
+        />
       </div>
     </section>
   `,

@@ -41,7 +41,7 @@ import { EmPipe } from '@shared/ui/pipe/em.pipe';
           [logo]="timelineSection.pro.organization.logo"
           [dirPath]="organizationLogoRoot"
           [name]="timelineSection.pro.organization.name"
-        ></cv-logo>
+        />
       </ng-template>
       <ng-template #logoSubtitleTemplate>
         <p>
@@ -55,12 +55,12 @@ import { EmPipe } from '@shared/ui/pipe/em.pipe';
             [backgroundColor]="topEdgeColor"
             [label]="skill.name"
             [textColor]="'white'"
-          ></cv-tag>
+          />
         </div>
       </ng-template>
       <p [innerHTML]="timelineSection.pro.description"></p>
       <ng-template #footerTemplate>
-        <cv-skill-list [skills]="timelineSection.pro.skills"></cv-skill-list>
+        <cv-skill-list [skills]="timelineSection.pro.skills"/>
       </ng-template>
     </cv-card>
   `,

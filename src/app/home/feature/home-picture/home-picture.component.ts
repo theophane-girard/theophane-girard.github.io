@@ -25,13 +25,13 @@ import { AbsoluteDirective } from '@shared/ui/directives/absolute.directive';
     <div id="container">
       <div relative>
         <div>
-          <cv-clock absolute></cv-clock>
+          <cv-clock absolute/>
         </div>
-        <cv-laptop></cv-laptop>
-        <cv-mug absolute></cv-mug>
-        <cv-plant absolute></cv-plant>
+        <cv-laptop/>
+        <cv-mug absolute/>
+        <cv-plant absolute/>
         <div id="desktop" absolute></div>
-        <cv-me absolute></cv-me>
+        <cv-me absolute/>
         <div id="circle-background" absolute></div>
       </div>
     </div>

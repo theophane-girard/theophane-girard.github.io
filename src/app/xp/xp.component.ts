@@ -41,7 +41,7 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
               [isFirst]="first"
               [timelineSection]="timelineSection"
               [topEdgeColor]="topEdgeColors[index]"
-            ></cv-xp-section>
+            />
           </div>
           <div
             class="progress-line-section"
@@ -51,7 +51,7 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
               [backgroundColor]="backgroundColor"
               *ngIf="!last"
               flex
-            ></cv-progress-line>
+            />
           </div>
         </div>
       </div>
