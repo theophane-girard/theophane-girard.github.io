@@ -18,7 +18,7 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
           [dirPath]="skillLogosPath"
           [logo]="skill.logo"
           [defaultWidth]="4"
-        ></cv-logo>
+        />
       </ng-container>
     </div>
   `,

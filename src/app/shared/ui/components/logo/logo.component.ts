@@ -11,12 +11,13 @@ import { Logo } from '@shared/data/shared.model';
     <a [attr.href]="url" [attr.target]="urlTarget">
       <img
         class="logo"
-        [attr.src]="dirPath + logo.url"
+        [ngSrc]="dirPath + logo.url"
+        [width]="50"
+        [height]="50"
+        [style.width]="logo.width | em : defaultWidth"
+        [style.height]="logo.height | em : defaultHeight"
+        loading="lazy"
         alt="{{ name }}"
-        [ngStyle]="{
-          width: logo.width | em : defaultWidth,
-          height: logo.height | em : defaultHeight
-        }"
       />
     </a>
   `,

@@ -18,18 +18,18 @@ import { SocialsComponent } from '../../ui/socials/socials.component';
         <!-- TODO: insert logo here -->
       </div>
     </div>
-    <br />
+    <br/>
     <div id="skill-tag-list">
       <cv-tag
         *ngFor="let tag of tags"
         [backgroundColor]="tag.backgroundColor"
         [label]="tag.label"
         [textColor]="tag.textColor"
-      ></cv-tag>
+      />
     </div>
-    <br />
+    <br/>
     <i>Working on angular projects as developer since 2018</i>
-    <cv-socials></cv-socials>
+    <cv-socials/>
   `,
   styleUrls: ['./home-description.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

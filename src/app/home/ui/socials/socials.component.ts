@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FlexDirective } from '@shared/ui/directives/flex.directive';
 
 @Component({
   selector: 'cv-socials',
   standalone: true,
-  imports: [CommonModule, FlexDirective],
+  imports: [CommonModule, FlexDirective, NgOptimizedImage],
   template: `
     <div id="contact-container" flex>
       <a
@@ -17,7 +17,10 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
       >
         <img
           id="mail-logo"
-          src="assets/others/gmail.svg"
+          [ngSrc]="'assets/others/gmail.svg'"
+          priority
+          width="50"
+          height="25"
           alt="theophane.girard@pm.me"
         />
       </a>

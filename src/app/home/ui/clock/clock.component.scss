@@ -60,8 +60,3 @@ $hours-height: $clock-width*0.25;
   transform-origin: bottom center;
   transition: transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44);
 }
-
-#notches {
-  width: $clock-width;
-  height: $clock-width;
-}

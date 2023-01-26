@@ -2,17 +2,16 @@ import { Component } from '@angular/core';
 import { BehaviorSubject, interval, Observable } from 'rxjs';
 import { map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Hands } from './clock.types';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { AbsoluteDirective } from '@shared/ui/directives/absolute.directive';
 
 @Component({
   selector: 'cv-clock',
   standalone: true,
-  imports: [CommonModule, AbsoluteDirective],
+  imports: [CommonModule, AbsoluteDirective, NgOptimizedImage],
   template: `
     <article id="clock" absolute>
       <div absolute id="hand-axis"></div>
-      <embed id="notches" src="assets/others/clock.svg" />
       <div class="hours-container">
         <div
           id="hours"

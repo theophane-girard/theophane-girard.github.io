@@ -19,17 +19,17 @@ import { WaveBackground } from './wave-separator/data/wave.types';
     HobbiesComponent,
   ],
   template: `
-    <cv-home [backgroundColor]="homeBackgroundColor"></cv-home>
+    <cv-home [backgroundColor]="homeBackgroundColor"/>
     <cv-wave-separator
       [backgroundColor]="homeBackgroundColor"
       [colors]="firstColors"
-    ></cv-wave-separator>
-    <cv-xp [backgroundColor]="secondBackgroundColor"></cv-xp>
+    />
+    <cv-xp [backgroundColor]="secondBackgroundColor"/>
     <cv-wave-separator
       [backgroundColor]="secondBackgroundColor"
       [colors]="secondColors"
-    ></cv-wave-separator>
-    <cv-hobbies [backgroundColor]="homeBackgroundColor"></cv-hobbies>
+    />
+    <cv-hobbies [backgroundColor]="homeBackgroundColor"/>
   `,
   standalone: true,
   styleUrls: ['./app.component.scss'],

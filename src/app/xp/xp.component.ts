@@ -32,27 +32,20 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
             let index = index
           "
         >
-          <div
+          <cv-xp-section
             flex
-            id="xp-section"
             [ngClass]="{ 'justify-content-end': index % 2 }"
-          >
-            <cv-xp-section
-              [isFirst]="first"
-              [timelineSection]="timelineSection"
-              [topEdgeColor]="topEdgeColors[index]"
-            ></cv-xp-section>
-          </div>
-          <div
+            [isFirst]="first"
+            [timelineSection]="timelineSection"
+            [topEdgeColor]="topEdgeColors[index]"
+          />
+          <cv-progress-line
             class="progress-line-section"
             [ngClass]="{ 'odd-flip': index % 2 === 0 }"
-          >
-            <cv-progress-line
-              [backgroundColor]="backgroundColor"
-              *ngIf="!last"
-              flex
-            ></cv-progress-line>
-          </div>
+            [backgroundColor]="backgroundColor"
+            *ngIf="!last"
+            flex
+          />
         </div>
       </div>
     </section>
