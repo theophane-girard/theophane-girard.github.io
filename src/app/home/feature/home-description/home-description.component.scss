@@ -1,18 +1,21 @@
-#name {
-  margin-bottom: 0;
+#title-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 #logo-container {
-  align-items: flex-start;
-  margin-left: 0.5em;
+  margin-right: 1rem;
 
   #logo {
-    width: 1em;
+    width: 3em;
+    height: 4.3em;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   #title-container {
-    display: block !important;
+    justify-content: flex-start;
   }
 }
+

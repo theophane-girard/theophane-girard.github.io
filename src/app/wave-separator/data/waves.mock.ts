@@ -1,4 +1,7 @@
-import { SECOND_BACKGROUND_COLOR } from '@shared/data/shared.constants';
+import {
+  HOME_BACKGROUND_COLOR,
+  SECOND_BACKGROUND_COLOR,
+} from '@shared/data/shared.constants';
 import { WaveBackground } from './wave.types';
 
 export const HOME_WAVES: WaveBackground[] = [
@@ -33,6 +36,6 @@ export const SECOND_WAVES: WaveBackground[] = [
     backgroundColor: '#6f4988',
   },
   {
-    backgroundColor: '#003c6a',
+    backgroundColor: HOME_BACKGROUND_COLOR,
   },
 ];

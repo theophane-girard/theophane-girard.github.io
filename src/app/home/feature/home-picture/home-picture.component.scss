@@ -25,7 +25,7 @@ section {
 #desktop {
   width: global.$desktop-width;
   height: global.$desktop-height;
-  background-color: black;
+  background-color: #dedede;
   top: global.$desktop-top;
   left: global.centerElementFromParent(global.$container-width, global.$desktop-width);
   border-radius: 1.66em;

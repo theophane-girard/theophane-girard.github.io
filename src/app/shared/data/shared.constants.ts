@@ -1,4 +1,4 @@
-export const HOME_BACKGROUND_COLOR = '#003c6a';
+export const HOME_BACKGROUND_COLOR = '#011a2c';
 export const SECOND_BACKGROUND_COLOR = '#00388c';
 
 export const SKILL_LOGOS_PATH = 'assets/skill-logos/';
