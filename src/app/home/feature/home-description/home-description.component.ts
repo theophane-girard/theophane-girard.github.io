@@ -11,14 +11,14 @@ import { SocialsComponent } from '../../ui/socials/socials.component';
   imports: [CommonModule, TagComponent, FlexDirective, SocialsComponent],
   template: `
     <div id="title-container" flex>
+      <div id="logo-container" flex>
+        <img src="assets/logo.svg" alt="" id="logo" />
+      </div>
       <div>
         <h1 id="name">Théophane Girard</h1>
       </div>
-      <div id="logo-container" flex>
-        <!-- TODO: insert logo here -->
-      </div>
     </div>
-    <br/>
+    <br />
     <div id="skill-tag-list">
       <cv-tag
         *ngFor="let tag of tags"
@@ -27,9 +27,9 @@ import { SocialsComponent } from '../../ui/socials/socials.component';
         [textColor]="tag.textColor"
       />
     </div>
-    <br/>
+    <br />
     <i>Working on angular projects as developer since 2018</i>
-    <cv-socials/>
+    <cv-socials />
   `,
   styleUrls: ['./home-description.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
