@@ -22,31 +22,26 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
     <section [style.background]="backgroundColor">
       <div class="section-container">
         <h1>My Experiences</h1>
-        <div
-          id="timeline-container"
-          flex
-          *ngFor="
-            let timelineSection of timelineSections;
-            let first = first;
-            let last = last;
-            let index = index
-          "
-        >
-          <cv-xp-section
-            flex
-            [ngClass]="{ 'justify-content-end': index % 2 }"
-            [isFirst]="first"
-            [timelineSection]="timelineSection"
-            [topEdgeColor]="topEdgeColors[index]"
-          />
-          <cv-progress-line
-            class="progress-line-section"
-            [ngClass]="{ 'odd-flip': index % 2 === 0 }"
-            [backgroundColor]="backgroundColor"
-            *ngIf="!last"
-            flex
-          />
-        </div>
+        @for ( timelineSection of timelineSections; track timelineSection; let
+        first = $first; let last = $last; let index = $index) {
+          <div id="timeline-container" flex>
+            <cv-xp-section
+              flex
+              [ngClass]="{ 'justify-content-end': index % 2 }"
+              [isFirst]="first"
+              [timelineSection]="timelineSection"
+              [topEdgeColor]="topEdgeColors[index]"
+            />
+            @if (!last) {
+              <cv-progress-line
+                class="progress-line-section"
+                [ngClass]="{ 'odd-flip': index % 2 === 0 }"
+                [backgroundColor]="backgroundColor"
+                flex
+              />
+            }
+          </div>
+        }
       </div>
     </section>
   `,

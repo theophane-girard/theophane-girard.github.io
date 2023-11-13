@@ -7,12 +7,9 @@ import { AbsoluteDirective } from '@shared/ui/directives/absolute.directive';
   standalone: true,
   imports: [CommonModule, AbsoluteDirective],
   template: `
-    <div
-      *ngFor="let steam of steams; let i = index"
-      class="steam"
-      id="steam-{{ i + 1 }}"
-      absolute
-    ></div>
+    @for (steam of steams; track steam; let i = $index) {
+      <div class="steam" id="steam-{{ i + 1 }}" absolute></div>
+    }
     <div id="mug" absolute>
       <div id="mug-shadow" absolute></div>
     </div>

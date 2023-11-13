@@ -9,14 +9,15 @@ import { StarIdPipe } from '../../pipes/star-id.pipe';
   standalone: true,
   imports: [CommonModule, AbsoluteDirective, StarClassPipe, StarIdPipe],
   template: `
-    <ng-container *ngFor="let star of stars; let index = index">
-      <div
-        *ngFor="let classPrefix of starClassPrefixes"
-        [ngClass]="classPrefix | starClass : index"
-        [attr.id]="classPrefix | starId : index"
-        absolute
-      ></div>
-    </ng-container>
+    @for (star of stars; track star; let index = $index) {
+      @for (classPrefix of starClassPrefixes; track classPrefix) {
+        <div
+          [ngClass]="classPrefix | starClass : index"
+          [attr.id]="classPrefix | starId : index"
+          absolute
+        ></div>
+      }
+    }
   `,
   styleUrls: ['./sky.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

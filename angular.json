@@ -78,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "cv-2023:build:production"
+              "buildTarget": "cv-2023:build:production"
             },
             "development": {
-              "browserTarget": "cv-2023:build:development"
+              "buildTarget": "cv-2023:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cv-2023:build"
+            "buildTarget": "cv-2023:build"
           }
         },
         "test": {

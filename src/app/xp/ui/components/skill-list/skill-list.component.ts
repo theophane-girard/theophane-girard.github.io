@@ -12,14 +12,15 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
   imports: [CommonModule, EmPipe, LogoComponent, FlexDirective],
   template: `
     <div id="skill-list" flex>
-      <ng-container *ngFor="let skill of skills">
-        <cv-logo
-          *ngIf="skill.logo"
-          [dirPath]="skillLogosPath"
-          [logo]="skill.logo"
-          [defaultWidth]="4"
-        />
-      </ng-container>
+      @for (skill of skills; track skill) {
+        @if (skill.logo) {
+          <cv-logo
+            [dirPath]="skillLogosPath"
+            [logo]="skill.logo"
+            [defaultWidth]="4"
+          />
+        }
+      }
     </div>
   `,
   styleUrls: ['./skill-list.component.scss'],

@@ -20,13 +20,14 @@ import { AnimationStateDirective } from '@shared/ui/directives/animation-state.d
         height="600"
         [attr.fill]="backgroundColor"
       ></rect>
-      <path
-        *ngFor="let wave of waves; let i = index"
-        [attr.id]="'wave' + i"
-        [attr.fill]="wave.backgroundColor"
-        animationState
-        [isRunning]="isScrolling$ | async"
-      ></path>
+      @for (wave of waves; track wave; let i = $index) {
+        <path
+          [attr.id]="'wave' + i"
+          [attr.fill]="wave.backgroundColor"
+          animationState
+          [isRunning]="isScrolling$ | async"
+        ></path>
+      }
     </svg>
   `,
   styleUrls: ['./wave-separator.component.scss'],

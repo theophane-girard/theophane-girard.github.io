@@ -26,13 +26,14 @@ import { ZIndexDirective } from '@shared/ui/directives/z-index.directive';
   template: `
     <div id="scout-picture" relative>
       <cv-cliff absolute/>
-      <cv-pine-tree
-        *ngFor="let index of [1, 2, 3]"
-        [attr.id]="'pine-tree-' + index"
-        [skewDegree]="index % 2 ? 4 : -4"
-        absolute
-        zIndex="2"
-      />
+      @for (index of [1, 2, 3]; track index) {
+        <cv-pine-tree
+          [attr.id]="'pine-tree-' + index"
+          [skewDegree]="index % 2 ? 4 : -4"
+          absolute
+          zIndex="2"
+        />
+      }
       <cv-tent zIndex="2" absolute/>
       <cv-fire zIndex="3" absolute/>
       <cv-grass id="grass-1" absolute/>

@@ -20,12 +20,13 @@ import { SocialsComponent } from '../../ui/socials/socials.component';
     </div>
     <br />
     <div id="skill-tag-list">
-      <cv-tag
-        *ngFor="let tag of tags"
-        [backgroundColor]="tag.backgroundColor"
-        [label]="tag.label"
-        [textColor]="tag.textColor"
-      />
+      @for (tag of tags; track tag) {
+        <cv-tag
+          [backgroundColor]="tag.backgroundColor"
+          [label]="tag.label"
+          [textColor]="tag.textColor"
+        />
+      }
     </div>
     <br />
     <i>Working on angular projects as developer since 2018</i>
