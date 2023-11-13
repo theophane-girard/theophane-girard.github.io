@@ -22,17 +22,23 @@ import { CommonModule } from '@angular/common';
       <ng-template #defaultLogoTemplate></ng-template>
       <ng-template #defaultLogoSubtitleTemplate></ng-template>
       <ng-template #defaultTitleTemplate>
-        <div *ngIf="title">
-          <h2>{{ title }}</h2>
-        </div>
+        @if (title) {
+          <div>
+            <h2>{{ title }}</h2>
+          </div>
+        }
       </ng-template>
       <ng-template #defaultSubtitleTemplate>
-        <div *ngIf="subtitle">
-          <h3>{{ subtitle }}</h3>
-        </div>
+        @if (subtitle) {
+          <div>
+            <h3>{{ subtitle }}</h3>
+          </div>
+        }
       </ng-template>
       <ng-template #defaultFooterTemplate>
-        <p *ngIf="footer" [innerHTML]="footer"></p>
+        @if (footer) {
+          <p [innerHTML]="footer"></p>
+        }
       </ng-template>
 
       <ng-container

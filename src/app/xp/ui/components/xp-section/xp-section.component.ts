@@ -50,17 +50,18 @@ import { EmPipe } from '@shared/ui/pipe/em.pipe';
       </ng-template>
       <ng-template #subtitleTemplate>
         <div id="skill-tag-list">
-          <cv-tag
-            *ngFor="let skill of timelineSection.pro.skills"
-            [backgroundColor]="topEdgeColor"
-            [label]="skill.name"
-            [textColor]="'white'"
-          />
+          @for (skill of timelineSection.pro.skills; track skill) {
+            <cv-tag
+              [backgroundColor]="topEdgeColor"
+              [label]="skill.name"
+              [textColor]="'white'"
+            />
+          }
         </div>
       </ng-template>
       <p [innerHTML]="timelineSection.pro.description"></p>
       <ng-template #footerTemplate>
-        <cv-skill-list [skills]="timelineSection.pro.skills"/>
+        <cv-skill-list [skills]="timelineSection.pro.skills" />
       </ng-template>
     </cv-card>
   `,

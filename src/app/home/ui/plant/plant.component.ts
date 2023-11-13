@@ -9,18 +9,14 @@ import { AbsoluteDirective } from '@shared/ui/directives/absolute.directive';
   template: `
     <div id="cactus" absolute>
       <div>
-        <div
-          *ngFor="let thorn of thorns"
-          class="thorn thorn-left"
-          absolute
-        ></div>
+        @for (thorn of thorns; track thorn) {
+          <div class="thorn thorn-left" absolute></div>
+        }
       </div>
       <div>
-        <div
-          *ngFor="let thorn of thorns"
-          class="thorn thorn-right"
-          absolute
-        ></div>
+        @for (thorn of thorns; track thorn) {
+          <div class="thorn thorn-right" absolute></div>
+        }
       </div>
     </div>
     <div id="jar-top" absolute></div>

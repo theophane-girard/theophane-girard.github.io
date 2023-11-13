@@ -10,7 +10,9 @@ import { RelativeDirective } from '@shared/ui/directives/relative.directive';
   template: `
     <div id="fire-container" relative>
       <div class="flames" absolute>
-        <div *ngFor="let fire of fires" class="fire" absolute></div>
+        @for (fire of fires; track fire) {
+          <div class="fire" absolute></div>
+        }
       </div>
       <div id="wood1" class="wood" absolute></div>
       <div id="wood2" class="wood" absolute></div>
