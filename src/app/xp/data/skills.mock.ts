@@ -1,7 +1,7 @@
 export const SKILLS = {
   ng: {
     name: 'Angular',
-    logo: { url: 'ng.svg' },
+    logo: { url: 'ng.gif' },
   },
   pgsql: {
     name: 'Postgres',
