@@ -9,7 +9,7 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
   template: `
     <div id="contact-container" flex>
       <a
-        href="mailto:theophane.girard@pm.me"
+        href="mailto:girard.theophane@gmail.com"
         class="contact-logo margin-1em justify-content-center align-items-center"
         id="mail-logo-container"
         target="_blank"
@@ -21,7 +21,7 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
           priority
           width="50"
           height="25"
-          alt="theophane.girard@pm.me"
+          alt="girard.theophane@gmail.com"
         />
       </a>
       <div class="margin-1em">
