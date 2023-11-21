@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@use './src/assets/global';
+@use 'src/assets/global.scss';
 
 #scout-picture {
   $scouting-picture-width: 40em;

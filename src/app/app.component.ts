@@ -24,12 +24,16 @@ import { WaveBackground } from './wave-separator/data/wave.types';
       [backgroundColor]="homeBackgroundColor"
       [colors]="firstColors"
     />
-    <cv-xp [backgroundColor]="secondBackgroundColor"/>
-    <cv-wave-separator
-      [backgroundColor]="secondBackgroundColor"
-      [colors]="secondColors"
-    />
-    <cv-hobbies [backgroundColor]="homeBackgroundColor"/>
+    @defer() {
+      <cv-xp [backgroundColor]="secondBackgroundColor"/>
+      <cv-wave-separator
+        [backgroundColor]="secondBackgroundColor"
+        [colors]="secondColors"
+      />
+    }
+    @defer() {
+      <cv-hobbies [backgroundColor]="homeBackgroundColor"/>
+    }
   `,
   standalone: true,
   styleUrls: ['./app.component.scss'],
