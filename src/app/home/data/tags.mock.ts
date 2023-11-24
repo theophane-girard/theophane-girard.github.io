@@ -1,5 +1,4 @@
-import { Tag } from '@shared/data/shared.model';
-import { Skill } from 'src/app/xp/data/timeline.model';
+import {Skill} from 'src/app/xp/data/timeline.model';
 
 export const SKILLS: Skill[] = [
   {
@@ -7,17 +6,24 @@ export const SKILLS: Skill[] = [
     logo: {
       url: 'assets/skill-logos/ng.gif',
       isBackgroundColorWhite: true,
-      height: 20,
-      width: 20
+      style: {
+        height: "2em",
+        width: "2em"
+      }
     },
   },
   {
     name: 'NodeJs',
     logo: {
-      url: 'assets/skill-logos/nodejs.svg',
+      // url: 'assets/skill-logos/node-black.svg',
+      url: 'assets/skill-logos/node.svg',
       isBackgroundColorWhite: true,
-      height: 20,
-      width: 20
+      style: {
+        height: "3.5em",
+        width: "3.5em",
+        position: "relative",
+        top: "-3px",
+      }
     },
   },
 ];
