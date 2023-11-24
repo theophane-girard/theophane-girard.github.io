@@ -1,29 +1,23 @@
 import { Tag } from '@shared/data/shared.model';
+import { Skill } from 'src/app/xp/data/timeline.model';
 
-export const TAGS: Tag[] = [
+export const SKILLS: Skill[] = [
   {
-    label: 'Angular',
-    backgroundColor: '#fcaf3c',
-    textColor: 'white',
+    name: 'Angular',
+    logo: {
+      url: 'assets/skill-logos/ng.gif',
+      isBackgroundColorWhite: true,
+      height: 20,
+      width: 20
+    },
   },
   {
-    label: 'NgRx',
-    backgroundColor: '#ff8a80',
-    textColor: 'white',
-  },
-  {
-    label: 'Ngxs',
-    backgroundColor: '#ff86c7',
-    textColor: 'white',
-  },
-  {
-    label: 'NodeJs',
-    backgroundColor: '#b99bf4',
-    textColor: 'white',
-  },
-  {
-    label: 'SCRUM',
-    backgroundColor: '#3f8cff',
-    textColor: 'white',
+    name: 'NodeJs',
+    logo: {
+      url: 'assets/skill-logos/nodejs.svg',
+      isBackgroundColorWhite: true,
+      height: 20,
+      width: 20
+    },
   },
 ];

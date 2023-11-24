@@ -10,4 +10,5 @@ export type Tag = {
   textColor: string;
   label: string;
   link?: string;
+  logo: string
 };
