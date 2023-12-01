@@ -18,7 +18,9 @@ import {HomeDescriptionComponent} from './feature/home-description/home-descript
           <div>
             <img src="assets/pp-socials.jpg" style="width: 20em;
     border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;border: 1px solid black;">
+    box-shadow: #011a2c 0 3px 8px;border: 1px solid black;    transform: rotateY(180deg);">
+            <div class="splash">
+            </div>
           </div>
         </div>
       </div>

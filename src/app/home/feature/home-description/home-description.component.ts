@@ -26,7 +26,7 @@ import {SKILLS} from '../../data/tags.mock';
       }
     </div>
     <br />
-    <i>Working on angular projects as developer since 2018</i>
+    <span>Working on Angular projects as developer since 2018</span>
     <cv-socials />
   `,
     styleUrls: ['./home-description.component.scss'],

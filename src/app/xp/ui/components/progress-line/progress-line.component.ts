@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ObserveVisibilityDirective } from '@shared/ui/directives/observe-visibility.directive';
-import { BehaviorSubject } from 'rxjs';
-import { AnimationStateDirective } from '@shared/ui/directives/animation-state.directive';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ObserveVisibilityDirective} from '@shared/ui/directives/observe-visibility.directive';
+import {BehaviorSubject} from 'rxjs';
+import {AnimationStateDirective} from '@shared/ui/directives/animation-state.directive';
 
 @Component({
   selector: 'cv-progress-line',
@@ -19,7 +19,7 @@ import { AnimationStateDirective } from '@shared/ui/directives/animation-state.d
       <path
         d="M630.975 1.16841C652.602 192.102 596.399 227.341 495.362 238.81C394.324 250.28 272.787 148.982 164.642 169.584C56.497 190.186 -22.2122 318.862 10.386 412.572"
         class="path"
-        stroke="white"
+        stroke="black"
         stroke-width="4"
         stroke-dasharray="8 8"
         animationState

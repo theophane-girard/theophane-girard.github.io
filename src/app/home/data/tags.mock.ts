@@ -15,14 +15,14 @@ export const SKILLS: Skill[] = [
   {
     name: 'NodeJs',
     logo: {
-      // url: 'assets/skill-logos/node-black.svg',
-      url: 'assets/skill-logos/node.svg',
+      url: 'assets/skill-logos/node-black.svg',
+      // url: 'assets/skill-logos/node.svg',
       isBackgroundColorWhite: true,
       style: {
         height: "3.5em",
         width: "3.5em",
         position: "relative",
-        top: "-3px",
+        top: "-1.5px",
       }
     },
   },

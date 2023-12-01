@@ -1,13 +1,13 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SectionComponent } from '@shared/ui/components/section.component';
-import { TIMELINE } from './data/timeline.mock';
-import { TimelineSection } from './data/timeline.model';
-import { XpSectionComponent } from './ui/components/xp-section/xp-section.component';
-import { ProgressLineComponent } from './ui/components/progress-line/progress-line.component';
-import { XP_TOP_EDGE_COLORS } from '@shared/data/shared.constants';
-import { Meta } from '@angular/platform-browser';
-import { FlexDirective } from '@shared/ui/directives/flex.directive';
+import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SectionComponent} from '@shared/ui/components/section.component';
+import {TIMELINE} from './data/timeline.mock';
+import {TimelineSection} from './data/timeline.model';
+import {XpSectionComponent} from './ui/components/xp-section/xp-section.component';
+import {ProgressLineComponent} from './ui/components/progress-line/progress-line.component';
+import {XP_TOP_EDGE_COLORS} from '@shared/data/shared.constants';
+import {Meta} from '@angular/platform-browser';
+import {FlexDirective} from '@shared/ui/directives/flex.directive';
 
 @Component({
   selector: 'cv-xp',
@@ -48,14 +48,15 @@ import { FlexDirective } from '@shared/ui/directives/flex.directive';
   styleUrls: ['./xp.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class XpComponent extends SectionComponent {
+export class XpComponent extends SectionComponent implements OnInit {
   readonly timelineSections: TimelineSection[] = TIMELINE;
   readonly topEdgeColors: string[] = XP_TOP_EDGE_COLORS;
+  readonly meta = inject(Meta)
 
-  constructor(private meta: Meta) {
-    super();
+  ngOnInit() {
     this.initDescriptionMetaTag();
   }
+
 
   private initDescriptionMetaTag() {
     const currentOrganization = this.timelineSections[0].pro.organization.name;

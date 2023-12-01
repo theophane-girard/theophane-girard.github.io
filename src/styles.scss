@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'src/assets/global.scss';
 
+:root {
+  --text: #E9F4FB;
+  --background: #011a2c;
+  --primary: #ff6d4d;
+  --secondary: #e6e6e5;
+  --accent: #d12600;
+}
+
+
+
 div {
   margin: 0;
 }
@@ -11,13 +21,15 @@ body {
 }
 
 html {
-  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+  font-family: Poppins, sans-serif;
+  //font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
   overflow-x: hidden;
-  color: white;
+  color: var(--text);
 }
 
 h1 {
   margin-top: 0;
+  font-weight: unset;
 }
 
 .text-align-center {
@@ -69,4 +81,16 @@ section {
 
 .bottom-0 {
   bottom: 0;
+}
+
+cv-xp {
+  --text: #0d0d07;
+  --background: #E6E6E5;
+  --primary: #8dc4a8;
+  --secondary: #dadaec;
+  --accent: #a5557d;
+
+  h1 {
+    color: var(--text);
+  }
 }
