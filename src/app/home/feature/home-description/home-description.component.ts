@@ -10,20 +10,20 @@ import {SKILLS} from '../../data/tags.mock';
     selector: 'cv-home-description',
     standalone: true,
     template: `
-    <div id="title-container" flex>
-      <div id="logo-container" flex>
+    <div id="title-container">
+      <div id="logo-container">
         <img src="assets/logo.svg" alt="" id="logo" />
       </div>
-      <div>
+      <div id="title" flex>
         <h1 id="name">Hi, I'm Théophane Girard</h1>
       </div>
-    </div>
-    <div id="skill-tag-list">
-      @for (skill of skills; track skill) {
-        <cv-skill-chip
-          [skill]="skill"
-        />
-      }
+      <div id="skill-tag-list" flex>
+        @for (skill of skills; track skill) {
+          <cv-skill-chip
+            [skill]="skill"
+          />
+        }
+      </div>
     </div>
     <br />
     <span>Working on Angular projects as developer since 2018</span>

@@ -31,7 +31,6 @@ import {TagComponent} from "@shared/ui/components/tag/tag.component";
     <p>
       More recently, I guide two groups of student scouts aged 18 to 21 in preparing international solidarity projects.
     </p>
-    <i><strong>“A scout is not a sitting-down animal.” Baden Powell</strong></i>
   `,
   styleUrls: ['./hobbies-description.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

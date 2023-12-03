@@ -1,26 +1,27 @@
 #title-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: 23%;
+    width: max-content;
+    #title {
+      width: max-content;
+      align-items: flex-end;
+    }
 }
 
 #logo-container {
-  margin-right: 1rem;
-
   #logo {
-    width: 3em;
+    width: 4em;
     height: 4.3em;
   }
 }
 
 #skill-tag-list {
-  display: flex;
-  justify-content: space-evenly;
+  grid-column-start: 2;
+  justify-content: space-between;
 }
 
 @media (min-width: 768px) {
   #title-container {
-    justify-content: flex-start;
   }
 }
 

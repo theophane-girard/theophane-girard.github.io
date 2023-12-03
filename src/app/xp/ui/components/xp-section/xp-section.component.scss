@@ -6,6 +6,10 @@
   text-align: justify;
 }
 
+#duration {
+  color: grey;
+}
+
 @media (max-width: 1200px) {
   :host ::ng-deep .card {
     max-width: unset !important;
