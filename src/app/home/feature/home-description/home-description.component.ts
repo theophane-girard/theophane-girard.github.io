@@ -7,9 +7,9 @@ import {SkillChipComponent} from "@shared/ui/skill-chip/skill-chip.component";
 import {SKILLS} from '../../data/tags.mock';
 
 @Component({
-    selector: 'cv-home-description',
-    standalone: true,
-    template: `
+  selector: 'cv-home-description',
+  standalone: true,
+  template: `
     <div id="title-container">
       <div id="logo-container">
         <img src="assets/logo.svg" alt="" id="logo" />
@@ -17,21 +17,25 @@ import {SKILLS} from '../../data/tags.mock';
       <div id="title" flex>
         <h1 id="name">Hi, I'm Théophane Girard</h1>
       </div>
+
       <div id="skill-tag-list" flex>
         @for (skill of skills; track skill) {
-          <cv-skill-chip
-            [skill]="skill"
-          />
+        <cv-skill-chip [skill]="skill" />
         }
       </div>
+      <span>Expert Angular Developer</span>
+      <cv-socials />
     </div>
-    <br />
-    <span>Working on Angular projects as developer since 2018</span>
-    <cv-socials />
   `,
-    styleUrls: ['./home-description.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, TagComponent, FlexDirective, SocialsComponent, SkillChipComponent]
+  styleUrls: ['./home-description.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    CommonModule,
+    TagComponent,
+    FlexDirective,
+    SocialsComponent,
+    SkillChipComponent,
+  ],
 })
 export class HomeDescriptionComponent {
   skills = SKILLS;

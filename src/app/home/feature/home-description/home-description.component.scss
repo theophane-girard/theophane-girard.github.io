@@ -1,10 +1,12 @@
 #title-container {
     display: grid;
-    grid-template-columns: 23%;
-    width: max-content;
+    grid-template-columns: 23% 70%;
+    grid-template-rows: 25%;
+    // width: max-content;
+
     #title {
-      width: max-content;
-      align-items: flex-end;
+      // width: max-content;
+      // align-items: flex-end;
     }
 }
 
