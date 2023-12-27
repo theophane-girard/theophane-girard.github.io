@@ -23,7 +23,9 @@ import {SKILLS} from '../../data/tags.mock';
         <cv-skill-chip [skill]="skill" />
         }
       </div>
-      <span>Expert Angular Developer</span>
+      <div id="subtitle">
+        <span>Expert Angular Developer</span>
+      </div>
       <cv-socials />
     </div>
   `,
