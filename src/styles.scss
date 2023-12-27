@@ -23,7 +23,6 @@ body {
 html {
   font-family: Poppins, sans-serif;
   //font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
-  overflow-x: hidden;
   color: var(--text);
   background: rgb(1, 26, 44)
 }
@@ -43,13 +42,11 @@ h1, h2 {
 
 section {
   min-height: 10em;
-  width: 100vw;
 }
 
 @media (max-width: 768px) {
   section {
     min-height: 10em;
-    width: 100vw;
   }
 }
 

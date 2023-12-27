@@ -1,7 +1,7 @@
 #title-container {
     display: grid;
     grid-template-columns: 4em 21em;
-    grid-template-rows: repeat(4, 25%);
+    grid-template-rows: 5em repeat(3, 25%);
     column-gap: 1em;
 
     #title {
@@ -24,13 +24,15 @@
 
 #skill-tag-list {
   grid-column-start: 2;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #subtitle {
   grid-column-start: 2;
-  text-align: center;
-  margin: 1em 0 0 0;
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 cv-socials {

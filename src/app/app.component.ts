@@ -8,6 +8,7 @@ import {HOME_BACKGROUND_COLOR, SECOND_BACKGROUND_COLOR,} from '@shared/data/shar
 import {WaveBackground} from './wave-separator/data/wave.types';
 import {PlaceholderComponent} from "@shared/ui/components/placeholder/placeholder.component";
 import { CloudsDeviderComponent } from '@shared/ui/components/clouds-devider/clouds-devider.component';
+import { StackableDirective } from '@shared/ui/directives/stackable.directive';
 
 @Component({
   selector: 'cv-root',
@@ -17,18 +18,14 @@ import { CloudsDeviderComponent } from '@shared/ui/components/clouds-devider/clo
     XpComponent,
     HobbiesComponent,
     PlaceholderComponent,
-    CloudsDeviderComponent
+    CloudsDeviderComponent,
+    StackableDirective,
   ],
   template: `
-    <cv-home [backgroundColor]="homeBackgroundColor" />
-    <clouds-devider />
+    <cv-home [backgroundColor]="homeBackgroundColor" stackable />
     @defer() {
-    <cv-xp [backgroundColor]="secondBackgroundColor" />
-    <cv-wave-separator
-      [backgroundColor]="secondBackgroundColor"
-      [colors]="secondColors"
-    />
-    <cv-hobbies [backgroundColor]="homeBackgroundColor" />
+    <cv-xp [backgroundColor]="secondBackgroundColor" stackable />
+    <!-- <cv-hobbies [backgroundColor]="homeBackgroundColor"  /> -->
     } @placeholder() {
     <cv-placeholder [backgroundColor]="secondBackgroundColor" />
     } @loading() {

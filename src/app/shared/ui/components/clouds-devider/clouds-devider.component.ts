@@ -8,38 +8,41 @@ import { FlipDirective } from '@shared/ui/directives/flip.directive';
   imports: [AbsoluteDirective, FlipDirective],
   selector: 'clouds-devider',
   template: `
-    @for(cloud of clouds; track cloud; let index = $index) {
-      @if (index % 2) {
-        <div class="cloud" flip></div>
-      } @else {
-        <div class="cloud"></div>
-      }
-    }
+    @for(cloud of clouds; track cloud; let index = $index) { @if (index % 2) {
+    <div class="cloud even" flip absolute [style.right]="cloud.right"></div>
+    } @else {
+    <div class="cloud odd" absolute [style.right]="cloud.right"></div>
+    } }
   `,
   styles: `
-    $base-cloud-width: 10em;
-    $base-cloud-height: 4em;
+    $base-cloud-width: 20em;
+    $base-cloud-height: $base-cloud-width * 0.4;
     $left-part-width: $base-cloud-width * 0.6;
     $right-part-width: $base-cloud-width * 0.3;
 
     .cloud {
       background-color: #fff;
       background-image: -webkit-linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
-      border-radius: 2em;
-      box-shadow: inset 0 0 0 1px hsla(0,0%,100%,.5);
+      border-radius: calc($base-cloud-width / 5);
       height: $base-cloud-height;
       width: $base-cloud-width;
-      -webkit-filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
+
+    }
+
+    .even {
+      animation: evenCloudAnimation 4s linear infinite alternate, evenEnterAnimation 0.3s ease-in-out;
+    }
+    .odd {
+      animation: oddCloudAnimation 4s linear infinite alternate, evenEnterAnimation 0.3s ease-in-out;
     }
 
     .cloud:after, .cloud:before {
         background-color: #fff;
         content: '';
         border-radius: 100%;
-        position: absolute;
     }
     .cloud:before {
-        // background-image: -webkit-linear-gradient(hsla(0,0%,0%,0) 50%, hsla(0,0%,0%,.075));
+      position: absolute;
         background-image: -webkit-linear-gradient(hsla(0, 0%, 0%, 0) 50%, hsla(0, 0%, 0%, 0.07));
         left: calc($left-part-width / 10);
         top: - calc($left-part-width / 2);
@@ -47,45 +50,57 @@ import { FlipDirective } from '@shared/ui/directives/flip.directive';
         height: $left-part-width;
     }
     .cloud:after {
+      position: absolute;
         background-image: -webkit-linear-gradient(hsla(0,0%,0%,0) 50%, hsla(0,0%,0%,.04));
         right: 1em;
         top: - calc($right-part-width / 2);
         width: $right-part-width;
         height: $right-part-width;
     }
+    @keyframes evenCloudAnimation {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+      transform: translateX(1em);
+      }
+    }
+    @keyframes oddCloudAnimation {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-1em);
+      }
+    }
 
-    // .cloud {
-    //   background-color: #fff;
-    //   background-image: -webkit-linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
-    //   border-radius: 1em;
-    //   box-shadow: inset 0 0 0 1px hsla(0,0%,100%,.5);
-    //   height: 1em;
-    //   width: 3em;
-    //   -webkit-filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
-    // }
+    @keyframes evenEnterAnimation {
+0% {
+opacity: 0.6;
+      transform: translateY(1.5em);
+      transition: 0.5s ease-in-out;
+        }
 
-    // .cloud:after, .cloud:before {
-    //     background-color: #fff;
-    //     content: '';
-    //     border-radius: 100%;
-    //     position: absolute;
-    // }
-    // .cloud:after {
-    //     background-image: -webkit-linear-gradient(hsla(0,0%,0%,0) 50%, hsla(0,0%,0%,.025));
-    //     height: 1em;
-    //     right: .4em;
-    //     top: -.5em;
-    //     width: 1em;
-    // }
-    // .cloud:before {
-    //     background-image: -webkit-linear-gradient(hsla(0,0%,0%,0) 50%, hsla(0,0%,0%,.075));
-    //     height: 1.6em;
-    //     left: .4em;
-    //     top: -.75em;
-    //     width: 1.6em;
-    // }
+      100%{opacity: 1;
+      transform: translateY(0em);
+      transition: 0.5s ease-in-out;
+    }
+  }
+      @keyframes oddEnterAnimation {
+        0% {
+opacity: 0.6;
+      transform: translateY(1em);
+      transition: 0.5s ease-in-out;
+        }
+      100%{opacity: 1;
+      transform: translateY(0);
+      transition: 0.5s ease-in-out;
+    }
+    }
     `,
 })
 export class CloudsDeviderComponent {
-  protected readonly clouds = new Array(7);
+  protected readonly clouds = new Array(7).fill(null).map((_, index) => ({
+    right: `-${index * 16}em`,
+  }));
 }

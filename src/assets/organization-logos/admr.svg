@@ -8,7 +8,7 @@
 		<rect id="SVGID_1_" width="841.89" height="595.28"/>
 	</defs>
 	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		<use xlink:href="#SVGID_1_"/>
 	</clipPath>
 	<path clip-path="url(#SVGID_2_)" fill="#676C6E" d="M345.828,185.258c21.757,0.113,38.625,5.561,50.595,16.35
 		c13.216,11.906,19.824,26.214,19.824,42.924c0,16.824-6.608,31.159-19.824,43.008c-11.97,10.731-28.838,16.154-50.595,16.266
@@ -32,7 +32,7 @@
 			c-11.466-11.469-27.311-18.563-44.811-18.563C220.177,181.654,209.211,184.829,199.801,190.366"/>
 	</defs>
 	<clipPath id="SVGID_4_">
-		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		<use xlink:href="#SVGID_3_"/>
 	</clipPath>
 	<g clip-path="url(#SVGID_4_)">
 		<g>
@@ -40,11 +40,11 @@
 				<rect id="SVGID_5_" x="168.512" y="181.654" width="126.746" height="126.748"/>
 			</defs>
 			<clipPath id="SVGID_6_">
-				<use xlink:href="#SVGID_5_"  overflow="visible"/>
+				<use xlink:href="#SVGID_5_"/>
 			</clipPath>
 			<g clip-path="url(#SVGID_6_)">
 
-					<image overflow="visible" width="265" height="265" xlink:href="88CB16FACFD8828E.jpg"  transform="matrix(0.48 0 0 0.48 168.5122 181.6543)">
+					<image width="265" height="265" xlink:href="88CB16FACFD8828E.jpg"  transform="matrix(0.48 0 0 0.48 168.5122 181.6543)">
 				</image>
 			</g>
 		</g>
@@ -55,7 +55,7 @@
 		<rect id="SVGID_7_" width="841.89" height="595.28"/>
 	</defs>
 	<clipPath id="SVGID_8_">
-		<use xlink:href="#SVGID_7_"  overflow="visible"/>
+		<use xlink:href="#SVGID_7_"/>
 	</clipPath>
 	<path clip-path="url(#SVGID_8_)" fill="#28AB57" d="M240.6,145.69c0.641-6.709-4.044-12.642-10.463-13.25
 		c-6.417-0.614-12.139,4.331-12.777,11.037c-0.64,6.713,4.047,12.644,10.463,13.255C234.24,157.343,239.959,152.398,240.6,145.69"/>
