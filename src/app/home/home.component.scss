@@ -1,11 +1,13 @@
 @use 'src/assets/global.scss';
 
 #content {
-  display: flex;
+  display: grid;
   justify-content: space-around;
-  align-items: center;
-  padding: 1em 0 0 0;
   height: 100vh;
+  grid-template-columns: 60% 40%;
+  row-gap: 10em;
+  justify-items: center;
+  transform: translateY(4em)
 }
 
 @media (max-width: 768px) {
