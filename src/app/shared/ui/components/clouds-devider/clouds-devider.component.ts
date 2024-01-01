@@ -8,14 +8,18 @@ import { FlamesComponent } from "@shared/ui/components/flames/flames.component";
   standalone: true,
   selector: 'clouds-devider',
   template: `
-    @for(cloud of clouds; track cloud; let index = $index) { @if (index % 2) {
-    <div class="cloud even" flip absolute [style.right]="cloud.right"></div>
-    } @else {
-    <div class="cloud odd" absolute [style.right]="cloud.right"></div>
-    } }
-    <div>
+    @for (cloud of clouds; track cloud; let index = $index) {
+      @if (index % 2) {
+        <div class="cloud even" flip absolute [style.right]="cloud.right"></div>
+      } @else {
+        <div class="cloud odd" absolute [style.right]="cloud.right"></div>
+      }
+    }
+    <div id="rocket" absolute>
+      <div id="cloud-piece-1" class="cloud-piece"></div>
+      <div id="cloud-piece-2" class="cloud-piece"></div>
+      <div id="cloud-piece-3" class="cloud-piece"></div>
       <cv-flames />
-      <div></div>
     </div>
   `,
   styles: `
@@ -26,41 +30,61 @@ import { FlamesComponent } from "@shared/ui/components/flames/flames.component";
     $delay-animation-delay: .3s;
     $cloud-animation: 4s linear infinite alternate;
     $flame-animation: .5s ease-in infinite;
+    $rocket-animation-duration: 10s;
+    $cloud-piece-animation: $rocket-animation-duration linear infinite 1s;
+    $rocket-animation: $rocket-animation-duration ease-in infinite 1s;
+    $rocket-rotate-deg: 20deg;
+
+    #rocket {
+      left: 65vw;
+      animation: rocketAnimation $rocket-animation;
+      width: 3em;
+      opacity: 0;
+      height: 5em;
+    }
+    .cloud-piece {
+      background: white;
+      position: absolute;
+      left: 1em;
+      z-index: 1;
+    }
+
+    #cloud-piece-1 {
+      width: 1em;
+      height: 1em;
+      border-radius: 1em;
+      animation: cloudPiece1Animation $cloud-piece-animation;
+    }
+    #cloud-piece-2 {
+      width: 1em;
+      height: 1em;
+      border-radius: 1em;
+      animation: cloudPiece2Animation $cloud-piece-animation;
+    }
+    #cloud-piece-3 {
+      width: 1em;
+      height: 1em;
+      border-radius: 1em;
+      animation: cloudPiece3Animation $cloud-piece-animation;
+    }
 
     cv-flames {
-      position: absolute;
-      left: 70vw;
-      transform: rotate(-155deg);
-
       &:before {
         content: "🚀";
+        left: -.3em;
         font-size: 4em;
         position: absolute;
-        transform: rotate(137deg);
-        top: 1.2em;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        transform: rotate(137deg);
-        top: 1.2em;
-        background: white;
-        // width
+        transform: rotate(-45deg);
       }
 
       ::ng-deep {
         .flames {
+          top: 16em;
+          left:0;
           font-size: 6px;
+          transform: rotate(45deg)
         }
       }
-      // &:after {
-      //   content: '';
-      //   width: 2em;
-      //   height: 2em;
-      //   background: red;
-      //   position: absolute;
-      // }
     }
 
     .cloud {
@@ -70,27 +94,29 @@ import { FlamesComponent } from "@shared/ui/components/flames/flames.component";
       height: $base-cloud-height;
       width: $base-cloud-width;
       opacity: 0;
-      //       ::after, ::before {
-      //   background-color: #fff;
-      //   content: '';
-      //   border-radius: 100%;
-      // }
-      // ::before {
-      //   position: absolute;
-      //     background-image: -webkit-linear-gradient(hsla(0, 0%, 0%, 0) 50%, hsla(0, 0%, 0%, 0.07));
-      //     left: calc($left-part-width / 10);
-      //     top: - calc($left-part-width / 2);
-      //     width: $left-part-width;
-      //     height: $left-part-width;
-      // }
-      // ::after {
-      //   position: absolute;
-      //     background-image: -webkit-linear-gradient(hsla(0,0%,0%,0) 50%, hsla(0,0%,0%,.04));
-      //     right: 1em;
-      //     top: - calc($right-part-width / 2);
-      //     width: $right-part-width;
-      //     height: $right-part-width;
-      // }
+      z-index: 1;
+
+      &:after, &:before {
+        background-color: #fff;
+        content: '';
+        border-radius: 100%;
+      }
+      &:before {
+        position: absolute;
+          background-image: -webkit-linear-gradient(hsla(0, 0%, 0%, 0) 50%, hsla(0, 0%, 0%, 0.07));
+          left: calc($left-part-width / 10);
+          top: - calc($left-part-width / 2);
+          width: $left-part-width;
+          height: $left-part-width;
+      }
+      &:after {
+        position: absolute;
+          background-image: -webkit-linear-gradient(hsla(0,0%,0%,0) 50%, hsla(0,0%,0%,.04));
+          right: 1em;
+          top: - calc($right-part-width / 2);
+          width: $right-part-width;
+          height: $right-part-width;
+      }
     }
 
     .even {
@@ -100,27 +126,6 @@ import { FlamesComponent } from "@shared/ui/components/flames/flames.component";
       animation: oddCloudAnimation $cloud-animation $delay-animation-delay, cloudEnterAnimation 0.3s ease-in-out $delay-animation-delay;
     }
 
-    .cloud:after, .cloud:before {
-        background-color: #fff;
-        content: '';
-        border-radius: 100%;
-    }
-    .cloud:before {
-      position: absolute;
-        background-image: -webkit-linear-gradient(hsla(0, 0%, 0%, 0) 50%, hsla(0, 0%, 0%, 0.07));
-        left: calc($left-part-width / 10);
-        top: - calc($left-part-width / 2);
-        width: $left-part-width;
-        height: $left-part-width;
-    }
-    .cloud:after {
-      position: absolute;
-        background-image: -webkit-linear-gradient(hsla(0,0%,0%,0) 50%, hsla(0,0%,0%,.04));
-        right: 1em;
-        top: - calc($right-part-width / 2);
-        width: $right-part-width;
-        height: $right-part-width;
-    }
     @keyframes evenCloudAnimation {
       0% {
         opacity: 1;
@@ -166,6 +171,90 @@ import { FlamesComponent } from "@shared/ui/components/flames/flames.component";
       }
       100%{
         transform: scale(.1) translateY(1em) translateX(1em);
+      }
+    }
+
+    @keyframes cloudPiece1Animation {
+      20%, 30%, 100% {
+        transform: translateX(2em) translateY(-3em);
+      }
+      0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+      }
+      5% {
+        opacity: 1;
+        transform: translateX(.5em) translateY(-1.5em);
+      }
+      10% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes cloudPiece2Animation {
+      20%, 30%, 100% {
+        transform: translateX(-2em) translateY(-3em);
+      }
+      0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+      }
+      5% {
+        opacity: 1;
+        transform: translateX(-.5em) translateY(-1.5em);
+      }
+      10% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes cloudPiece3Animation {
+      20%, 30%, 100% {
+        transform: translateX(1em) translateY(-3em);
+      }
+      0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+      }
+      5% {
+        opacity: 1;
+        transform: translateX(.5em) translateY(-1.5em);
+      }
+      10% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes rocketAnimation {
+      0%, 10%, 50% {
+        opacity: 1;
+      }
+      0% {
+        transform: rotate($rocket-rotate-deg) translateY(-.5em);
+      }
+      50% {
+        transform: rotate($rocket-rotate-deg) translateX(.5em) translateY(-60em);
+      }
+      51% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
       }
     }
     `,

@@ -15,12 +15,12 @@ import {SKILLS} from '../../data/tags.mock';
         <img src="assets/logo.svg" alt="" id="logo" />
       </div>
       <div id="title" flex>
-        <h1 id="name">Hi, I'm Théophane Girard</h1>
+        <h1 id="firstname" class="name">Théophane</h1>&nbsp;<h1 id="lastname" class="name">Girard</h1>
       </div>
 
       <div id="skill-tag-list" flex>
         @for (skill of skills; track skill) {
-        <cv-skill-chip [skill]="skill" />
+          <cv-skill-chip [skill]="skill" />
         }
       </div>
       <div id="subtitle">
