@@ -11,7 +11,7 @@ import {HomeDescriptionComponent} from './feature/home-description/home-descript
   template: `
     <section [style.background]="backgroundColor">
       <div class="section-container">
-        <div id="content">
+        <div id="content" style="--i: 1;">
           <cv-home-description/>
           <div>
             <img src="assets/pp-socials.jpg" style="width: 20em;
