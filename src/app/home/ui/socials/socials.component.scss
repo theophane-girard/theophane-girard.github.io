@@ -1,3 +1,8 @@
+#contact-container {
+  display: flex;
+  justify-content: center;
+}
+
 .contact-logo {
   animation: contact-logo 1s ease-in-out;
 }
@@ -5,8 +10,8 @@
 #mail-logo-container {
   background: #d1d1d1;
   border-radius: 50%;
-  width: 3.5em;
-  height: 3.5em;
+  width: 2.5em;
+  height: 2.5em;
 
   &:hover {
     opacity: 0.7;
@@ -14,14 +19,14 @@
   }
 
   #mail-logo {
-    width: 1.6em;
+    width: 1.3em;
   }
 }
 
 // fa = font-awesome
 .fa {
   padding: 0.5em;
-  font-size: 30px;
+  font-size: 20px;
   width: 1em;
   text-align: center;
   text-decoration: none;
@@ -49,7 +54,7 @@
 }
 
 .margin-1em {
-  margin: 1em 1em 1em 0;
+  margin: 0 1em 1em 0;
 }
 
 @keyframes contact-logo {

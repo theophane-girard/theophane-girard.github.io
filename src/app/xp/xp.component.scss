@@ -1,5 +1,15 @@
 @use 'src/assets/global.scss';
 
+.section-container {
+  padding: 5em 0;
+}
+
+clouds-devider {
+  height: 0;
+  display: flex;
+  top: -5em;
+}
+
 #timeline-container {
   flex-direction: column;
   flex-wrap: wrap;

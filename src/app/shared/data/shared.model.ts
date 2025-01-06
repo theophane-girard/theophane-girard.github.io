@@ -1,8 +1,7 @@
 export type Logo = {
   url: string;
   isBackgroundColorWhite?: boolean;
-  width?: number;
-  height?: number;
+  style?: Record<string, unknown>
 };
 
 export type Tag = {
@@ -10,4 +9,5 @@ export type Tag = {
   textColor: string;
   label: string;
   link?: string;
+  logo: string
 };

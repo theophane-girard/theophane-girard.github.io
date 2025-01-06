@@ -1,21 +1,46 @@
 #title-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: 4em 21em;
+    grid-template-rows: 5em repeat(3, 25%);
+    column-gap: 1em;
+
+    #title {
+      grid-column-start: 2;
+      align-items: center;
+      justify-content: center;
+      .name {
+        margin-bottom: 0;
+      }
+    }
 }
 
 #logo-container {
-  margin-right: 1rem;
-
+  grid-column-start: 1;
   #logo {
-    width: 3em;
+    width: 4em;
     height: 4.3em;
   }
 }
 
+#skill-tag-list {
+  grid-column-start: 2;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#subtitle {
+  grid-column-start: 2;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+cv-socials {
+  grid-column-start: 2;
+}
+
 @media (min-width: 768px) {
   #title-container {
-    justify-content: flex-start;
   }
 }
 

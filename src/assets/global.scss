@@ -4,6 +4,12 @@
 @forward "./styles/shared";
 @forward './styles/home';
 
+//@font-face {
+//  font-family: "Poppins";
+//  //src: url('fonts/poppins/');
+//  src: url('fonts/Poppins-Regular.ttf') format('truetype')
+//}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500&display=swap');
 $progress-line-width: 40em;
 
 // hobbies
@@ -26,3 +32,14 @@ $grass-width: 0.5em;
 $grass-blade-width: 0.5em;
 $grass-blade-height: 0.1em;
 
+//--text: #150f10;
+//--background: #f0eaec;
+//--primary: #c3002f;
+//--secondary: #00273F;
+//--accent: #646c87;
+
+//--text: #dff0fc;
+//--background: #011a2c;
+//--primary: #f0a26a;
+//--secondary: #041725;
+//--accent: #df6a16;

@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { EmPipe } from '../../pipe/em.pipe';
-import { Logo } from '@shared/data/shared.model';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {EmPipe} from '../../pipe/em.pipe';
+import {Logo} from '@shared/data/shared.model';
 
 @Component({
   selector: 'cv-logo',
@@ -12,10 +12,9 @@ import { Logo } from '@shared/data/shared.model';
       <img
         class="logo"
         [ngSrc]="dirPath + logo.url"
-        [width]="50"
-        [height]="50"
-        [style.width]="logo.width | em : defaultWidth"
-        [style.height]="logo.height | em : defaultHeight"
+        [width]="100"
+        [height]="100"
+        [style.width]="logo.style"
         loading="lazy"
         alt="{{ name }}"
       />

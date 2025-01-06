@@ -11,7 +11,7 @@ svg {
   .path {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation: dash 1s linear alternate;
+    animation: dash 0.5s linear alternate;
     animation-fill-mode: forwards;
     animation-play-state: paused;
   }

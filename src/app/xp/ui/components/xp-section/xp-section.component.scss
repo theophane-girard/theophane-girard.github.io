@@ -6,6 +6,10 @@
   text-align: justify;
 }
 
+#duration {
+  color: grey;
+}
+
 @media (max-width: 1200px) {
   :host ::ng-deep .card {
     max-width: unset !important;
@@ -25,5 +29,5 @@
 .visible {
   opacity: 1;
   transform: translateY(0em);
-  transition: 2s ease-in-out;
+  transition: 0.5s ease-in-out;
 }

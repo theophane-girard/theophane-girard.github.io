@@ -43,19 +43,19 @@ import { EmPipe } from '@shared/ui/pipe/em.pipe';
           [name]="timelineSection.pro.organization.name"
         />
       </ng-template>
-      <ng-template #logoSubtitleTemplate>
-        <p>
+      <ng-template #subtitleTemplate>
+        <p id="duration">
           {{ timelineSection.duration | currentDuration : isFirst }}
         </p>
       </ng-template>
       <ng-template #subtitleTemplate>
         <div id="skill-tag-list">
           @for (skill of timelineSection.pro.skills; track skill) {
-            <cv-tag
-              [backgroundColor]="topEdgeColor"
-              [label]="skill.name"
-              [textColor]="'white'"
-            />
+          <cv-tag
+            [backgroundColor]="topEdgeColor"
+            [label]="skill.name"
+            [textColor]="'white'"
+          />
           }
         </div>
       </ng-template>

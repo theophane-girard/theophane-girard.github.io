@@ -49,7 +49,7 @@ export class ObserveVisibilityDirective
 
   private createObserver() {
     const options = {
-      rootMargin: '0px',
+      rootMargin: '400px',
       threshold: this.threshold,
     };
 
@@ -80,7 +80,7 @@ export class ObserveVisibilityDirective
           target: entry.target as HTMLElement,
           observer,
         })),
-        tap(({ target, observer }) => this.visible.emit(target)),
+        tap(({ target }) => this.visible.emit(target)),
         tap(({ target, observer }) => observer.unobserve(target)),
         take(1)
       )

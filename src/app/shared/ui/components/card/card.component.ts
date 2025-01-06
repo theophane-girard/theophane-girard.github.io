@@ -19,8 +19,8 @@ import { CommonModule } from '@angular/common';
       [style.color]="color"
       [style.max-width]="maxWidth"
     >
-      <ng-template #defaultLogoTemplate></ng-template>
-      <ng-template #defaultLogoSubtitleTemplate></ng-template>
+      <ng-template #defaultLogoTemplate />
+      <ng-template #defaultLogoSubtitleTemplate />
       <ng-template #defaultTitleTemplate>
         @if (title) {
           <div>
@@ -43,22 +43,22 @@ import { CommonModule } from '@angular/common';
 
       <ng-container
         [ngTemplateOutlet]="logoTemplate || defaultLogoTemplate"
-      ></ng-container>
+      />
 
       <ng-container
         [ngTemplateOutlet]="logoSubtitleTemplate || defaultLogoSubtitleTemplate"
-      ></ng-container>
+      />
 
       <ng-container
         [ngTemplateOutlet]="titleTemplate || defaultTitleTemplate"
-      ></ng-container>
+      />
       <ng-container
         [ngTemplateOutlet]="subtitleTemplate || defaultSubtitleTemplate"
-      ></ng-container>
+      />
       <ng-content></ng-content>
       <ng-container
         [ngTemplateOutlet]="footerTemplate || defaultFooterTemplate"
-      ></ng-container>
+      />
     </div>
   `,
   styleUrls: ['./card.component.scss'],
