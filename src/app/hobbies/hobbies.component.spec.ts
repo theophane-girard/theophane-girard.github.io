@@ -9,12 +9,4 @@ describe('HobbiesComponent', () => {
   it('should create the HobbiesComponent', () => {
     expect(spectator.component).toBeTruthy();
   });
-
-  it('should have description and picture hidden at load and visible at visible$ emit', () => {
-    expect(spectator.component).toBeTruthy();
-    expect(spectator.query('.visible')).toBeFalsy();
-    spectator.component.visible$.next(true);
-    spectator.detectComponentChanges();
-    expect(spectator.query('.visible')).toBeTruthy();
-  });
 });

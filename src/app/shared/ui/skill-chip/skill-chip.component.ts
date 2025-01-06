@@ -7,12 +7,14 @@ import {Skill} from "../../../xp/data/timeline.model";
   standalone: true,
   imports: [CommonModule, NgOptimizedImage],
   template: `
+  @if(skill) {
     <div id="chip">
       <div id="logo-container">
         <img [src]="skill.logo?.url" [style]="skill.logo?.style" [attr.alt]="skill.name"/>
       </div>
       <span>{{ skill.name }}</span>
     </div>
+  }
   `,
   styles: `
   #chip {
